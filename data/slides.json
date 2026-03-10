@@ -1,0 +1,32 @@
+{
+  "title": "Agent Skills",
+  "subtitle": "3 Months, 1 Standard, 100K+ Skills",
+  "slides": [
+    {
+      "id": "cover",
+      "type": "cover"
+    },
+    {
+      "id": "timeline",
+      "type": "image",
+      "title": "Rapid Adoption",
+      "image": "images/timeline.svg"
+    },
+    {
+      "id": "context",
+      "type": "context-flow",
+      "title": "How Skills Save Context"
+    },
+    {
+      "id": "security",
+      "type": "stats-grid",
+      "title": "Security Reality",
+      "stats": [
+        { "number": "7.5%", "label": "Malicious Skills", "source": "RankClaw Audit" },
+        { "number": "36.8%", "label": "Have Security Issues", "source": "Snyk Report" },
+        { "number": "1,184", "label": "Poisoned Skills", "source": "CVE-2026-25253" },
+        { "number": "80%", "label": "Attack Success Rate", "source": "Skill-Inject Paper" }
+      ]
+    }
+  ]
+}

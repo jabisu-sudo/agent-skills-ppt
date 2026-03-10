@@ -1,0 +1,212 @@
+/* Agent Skills PPT - Theme */
+/* 改这个文件 = 全局改风格 */
+
+:root {
+  /* Colors - Gamma Style */
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #E2E8F0;
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --accent-blue: #3B82F6;
+  --accent-red: #EF4444;
+  --accent-green: #10B981;
+  --accent-amber: #F59E0B;
+  --card-bg: #FFFFFF;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05);
+  --card-radius: 16px;
+  
+  /* Typography */
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+  --title-size: 48px;
+  --body-size: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Slide Base */
+.slide {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.slide.active { display: flex; }
+
+.slide h2 {
+  font-size: var(--title-size);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 50px;
+}
+
+/* Cover */
+.slide-cover {
+  text-align: center;
+}
+
+.slide-cover h1 {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.slide-cover .subtitle {
+  font-size: 24px;
+  color: var(--text-secondary);
+}
+
+/* Image Slide */
+.slide-image .image-container {
+  width: 90%;
+  max-width: 1000px;
+}
+
+.slide-image svg {
+  width: 100%;
+}
+
+/* Context Flow */
+.context-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.context-card {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--bg-secondary);
+  min-width: 200px;
+}
+
+.context-card.blue { border-top: 4px solid var(--accent-blue); }
+.context-card.amber { border-top: 4px solid var(--accent-amber); }
+.context-card.green { border-top: 4px solid var(--accent-green); }
+
+.context-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.context-card .item {
+  font-size: 14px;
+  color: var(--text-primary);
+  padding: 10px 12px;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+}
+
+.arrow-box {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  color: var(--text-secondary);
+}
+
+.result-card {
+  background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+  border-radius: var(--card-radius);
+  padding: 32px;
+  color: white;
+  text-align: center;
+  min-width: 180px;
+}
+
+.result-card .big {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.result-card .label {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 800px;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 32px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid #FEE2E2;
+  border-top: 4px solid var(--accent-red);
+  text-align: center;
+}
+
+.stat-card .number {
+  font-size: 56px;
+  font-weight: 700;
+  color: #DC2626;
+}
+
+.stat-card .desc {
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.stat-card .source {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 12px;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #CBD5E1;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-dot.active { background: var(--accent-blue); }
+
+.slide-num {
+  position: fixed;
+  bottom: 35px;
+  right: 50px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
