@@ -72,10 +72,10 @@
     <div class="col">
       <h3>📄 Old Solutions Fall Short</h3>
       <ul>
-        <li><strong>Manual repeat</strong> — tedious, wastes context</li>
-        <li><strong>Giant system prompt</strong> — burns 10K tokens, less room for actual work</li>
-        <li><strong>RAG</strong> — heavy, retrieval quality inconsistent</li>
-        <li><strong>Fine-tuning</strong> — expensive, slow to update</li>
+        <li><strong>Manual repeat</strong> — say it every session, still forgotten</li>
+        <li><strong>Giant system prompt</strong> — eats context, less room for work</li>
+        <li><strong>RAG</strong> — too heavy for personal use</li>
+        <li><strong>Fine-tuning</strong> — too expensive, too slow</li>
       </ul>
     </div>
   </div>
@@ -131,14 +131,14 @@
       <rect x="30" y="20" width="320" height="280" rx="16" fill="white" stroke="var(--accent-blue, #3B82F6)" stroke-width="3"/>
       <rect x="30" y="20" width="320" height="50" rx="16" fill="var(--accent-blue, #3B82F6)"/>
       <rect x="30" y="54" width="320" height="16" fill="var(--accent-blue, #3B82F6)"/>
-      <text x="190" y="54" text-anchor="middle" class="p4-badge">📋 Routing Index</text>
+      <text x="190" y="54" text-anchor="middle" class="p4-badge">📋 Layer 1: Route</text>
       <text x="50" y="110" class="p4-item">weather → forecasts</text>
       <text x="50" y="145" class="p4-item">github → PRs, issues</text>
       <text x="50" y="180" class="p4-item">imsg → send iMessage</text>
       <text x="50" y="215" class="p4-item">coding → delegate tasks</text>
       <text x="50" y="255" class="p4-label" style="font-style:italic;">+46 more skills...</text>
       <text x="190" y="330" text-anchor="middle" class="p4-label">Always in system prompt</text>
-      <text x="190" y="358" text-anchor="middle" class="p4-label" style="fill:var(--accent-blue,#3B82F6); font-weight:700;">~500 tokens</text>
+      <text x="190" y="358" text-anchor="middle" class="p4-label" style="fill:var(--accent-blue,#3B82F6); font-weight:700;">Just a few hundred tokens</text>
 
       <!-- Arrow 1→2 -->
       <line x1="370" y1="160" x2="430" y2="160" class="p4-arrow"/>
@@ -148,7 +148,7 @@
       <rect x="450" y="40" width="280" height="240" rx="16" fill="white" stroke="var(--accent-amber, #F59E0B)" stroke-width="3"/>
       <rect x="450" y="40" width="280" height="50" rx="16" fill="var(--accent-amber, #F59E0B)"/>
       <rect x="450" y="74" width="280" height="16" fill="var(--accent-amber, #F59E0B)"/>
-      <text x="590" y="74" text-anchor="middle" class="p4-badge">📄 SKILL.md</text>
+      <text x="590" y="74" text-anchor="middle" class="p4-badge">📄 Layer 2: Load</text>
       <text x="470" y="130" class="p4-item">## Steps</text>
       <text x="470" y="165" class="p4-item">1. Check wttr.in</text>
       <text x="470" y="200" class="p4-item">2. Format output</text>
@@ -158,33 +158,33 @@
 
       <!-- Arrow 2→3 -->
       <line x1="750" y1="160" x2="810" y2="160" class="p4-arrow"/>
-      <text x="780" y="140" text-anchor="middle" class="p4-label" style="font-size:16px;">read</text>
+      <text x="780" y="140" text-anchor="middle" class="p4-label" style="font-size:16px;">done</text>
 
       <!-- Layer 3: Referenced files -->
       <rect x="830" y="60" width="240" height="200" rx="16" fill="white" stroke="var(--accent-green, #10B981)" stroke-width="3"/>
       <rect x="830" y="60" width="240" height="50" rx="16" fill="var(--accent-green, #10B981)"/>
       <rect x="830" y="94" width="240" height="16" fill="var(--accent-green, #10B981)"/>
-      <text x="950" y="94" text-anchor="middle" class="p4-badge">📁 Scripts</text>
-      <text x="850" y="150" class="p4-item">weather.sh</text>
-      <text x="850" y="185" class="p4-item">config.json</text>
-      <text x="850" y="220" class="p4-item">templates/</text>
-      <text x="950" y="290" text-anchor="middle" class="p4-label">Agent reads if needed</text>
-      <text x="950" y="318" text-anchor="middle" class="p4-label" style="fill:var(--accent-green,#10B981); font-weight:700;">On demand</text>
+      <text x="950" y="94" text-anchor="middle" class="p4-badge">🗑️ Layer 3: Unload</text>
+      <text x="850" y="150" class="p4-item">Task complete →</text>
+      <text x="850" y="185" class="p4-item">context released</text>
+      <text x="850" y="220" class="p4-item">Load again when needed</text>
+      <text x="950" y="290" text-anchor="middle" class="p4-label">Use it, then discard</text>
+      <text x="950" y="318" text-anchor="middle" class="p4-label" style="fill:var(--accent-green,#10B981); font-weight:700;">Ephemeral</text>
 
       <!-- Bottom summary -->
       <rect x="250" y="400" width="600" height="100" rx="16" fill="var(--bg-primary, #F8FAFC)" stroke="#E2E8F0" stroke-width="2"/>
-      <text x="550" y="440" text-anchor="middle" class="p4-big">50 skills → ~500 tokens</text>
-      <text x="550" y="478" text-anchor="middle" class="p4-note" style="font-size:22px;">Without skills: 50 full prompts → ~25,000 tokens 🔥</text>
+      <text x="550" y="440" text-anchor="middle" class="p4-big">50 skills → a few hundred tokens</text>
+      <text x="550" y="478" text-anchor="middle" class="p4-note" style="font-size:22px;">Without skills: 50 full prompts → tens of thousands of tokens 🔥</text>
     </svg>
   </div>
 </div>
 
 <!-- P5: System Prompt 示例 -->
 <div class="slide">
-  <h2>What It Looks Like in System Prompt</h2>
+  <h2>What It Actually Looks Like</h2>
   <div class="two-column" style="gap: 30px;">
     <div class="col">
-      <h3 style="font-size:22px; margin-bottom:12px;">📋 Layer 1: Routing Index</h3>
+      <h3 style="font-size:22px; margin-bottom:12px;">📋 System Prompt (routing info)</h3>
       <div class="code-block" style="font-size:15px;">
         <pre><code>&lt;available_skills&gt;
   &lt;skill&gt;
@@ -211,10 +211,10 @@ NOT for: email or Slack.&lt;/description&gt;
   &lt;!-- +47 more skills... --&gt;
 &lt;/available_skills&gt;</code></pre>
       </div>
-      <p style="color: var(--text-secondary); font-size:16px; margin-top:8px;">50 skills ≈ a few hundred tokens</p>
+      <p style="color: var(--text-secondary); font-size:16px; margin-top:8px;">50 skills ≈ a few hundred tokens of routing info</p>
     </div>
     <div class="col">
-      <h3 style="font-size:22px; margin-bottom:12px;">⚡ Layer 2: On-Demand Load</h3>
+      <h3 style="font-size:22px; margin-bottom:12px;">⚡ SKILL.md (loaded on match)</h3>
       <div class="code-block" style="font-size:15px;">
         <pre><code># User: "What's the weather in Suzhou?"
 # → AI matches "weather" skill
@@ -231,8 +231,8 @@ NOT for: email or Slack.&lt;/description&gt;
 - Current: 🌡️ {temp}°C, {condition}
 - Tomorrow: {high}/{low}°C</code></pre>
       </div>
-      <h3 style="font-size:22px; margin-top:20px; margin-bottom:12px;">🗑️ Layer 3: Unload</h3>
-      <p style="color: var(--text-secondary); font-size:18px;">Task done → SKILL.md dropped from context.<br>Next task loads a different skill.</p>
+      <h3 style="font-size:22px; margin-top:20px; margin-bottom:12px;">🗑️ After Task</h3>
+      <p style="color: var(--text-secondary); font-size:18px;">SKILL.md dropped from context → tokens freed.<br>Next request may load a completely different skill.</p>
     </div>
   </div>
 </div>
@@ -281,51 +281,52 @@ NOT for: email or Slack.&lt;/description&gt;
   </div>
 </div>
 
-<!-- P7: 自由度 + 测试 -->
+<!-- P7: 自由度 -->
 <div class="slide">
-  <h2>Design Choices</h2>
-  <div class="two-column">
-    <div class="col">
-      <h3>🎚️ Constraint Spectrum</h3>
-      <div style="margin-bottom:16px;">
-        <h4 style="font-size:20px; margin-bottom:6px;">🧱 High Constraint (Narrow Bridge)</h4>
-        <div class="code-block" style="font-size:15px; margin-bottom:4px;">
-          <pre><code>## Required Command
+  <h2>Constraint Spectrum</h2>
+  <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:28px;">
+    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-blue, #3B82F6);">
+      <h4 style="font-size:22px; margin-bottom:10px;">🧱 High Constraint (Narrow Bridge)</h4>
+      <div class="code-block" style="font-size:16px; margin-bottom:8px;">
+        <pre><code>## Required Command
 curl -s "wttr.in/{city}?format=3"
 Do NOT use any other weather API.</code></pre>
-        </div>
-        <p style="font-size:16px; color:var(--text-secondary);">Best for: specific APIs, exact CLI syntax, security-sensitive ops</p>
       </div>
-      <div style="margin-bottom:16px;">
-        <h4 style="font-size:20px; margin-bottom:6px;">🌄 Low Constraint (Open Field)</h4>
-        <div class="code-block" style="font-size:15px; margin-bottom:4px;">
-          <pre><code>## Options
+      <p style="font-size:18px; color:var(--text-secondary);">Best for: specific APIs, exact CLI syntax, security-sensitive ops</p>
+    </div>
+    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-green, #10B981);">
+      <h4 style="font-size:22px; margin-bottom:10px;">🌄 Low Constraint (Open Field)</h4>
+      <div class="code-block" style="font-size:16px; margin-bottom:8px;">
+        <pre><code>## Options
 - wttr.in (simple) or Open-Meteo (detailed)
 - Choose format based on user needs</code></pre>
-        </div>
-        <p style="font-size:16px; color:var(--text-secondary);">Best for: creative tasks, multi-tool scenarios, flexible output</p>
       </div>
-      <p style="font-size:18px; margin-top:8px;"><strong>Rule of thumb:</strong> AI keeps getting it wrong → tighten; too rigid → loosen</p>
+      <p style="font-size:18px; color:var(--text-secondary);">Best for: creative tasks, multi-tool scenarios, flexible output</p>
     </div>
-    <div class="col">
-      <h3>🧪 Test Your Triggers</h3>
-      <div style="margin-bottom:20px;">
-        <h4 style="font-size:20px; color:var(--accent-amber);">⚡ Under-trigger</h4>
-        <p style="font-size:18px;">"苏州明天热不热" → skill not invoked</p>
-        <p style="font-size:16px; color:var(--text-secondary);">Fix: add keywords like "hot", "cold", "temperature" to description</p>
-      </div>
-      <div style="margin-bottom:20px;">
-        <h4 style="font-size:20px; color:var(--accent-red);">🚫 Over-trigger</h4>
-        <p style="font-size:18px;">"I feel cold inside" → weather skill fires</p>
-        <p style="font-size:16px; color:var(--text-secondary);">Fix: add "NOT for: emotional expressions, metaphors"</p>
-      </div>
-      <div style="margin-bottom:20px;">
-        <h4 style="font-size:20px; color:var(--accent-blue);">💥 Exec Error</h4>
-        <p style="font-size:18px;">Triggered correctly but returns wrong data</p>
-        <p style="font-size:16px; color:var(--text-secondary);">Fix: improve instructions, add error handling in SKILL.md</p>
-      </div>
-      <p style="font-size:18px;"><strong>Testing method:</strong> Try 5+ phrasings per intent, check trigger + output</p>
+    <p style="font-size:22px; text-align:center; margin-top:8px;"><strong>Rule of thumb:</strong> AI keeps getting it wrong → tighten · too rigid → loosen</p>
+  </div>
+</div>
+
+<!-- P7b: 测试触发 -->
+<div class="slide">
+  <h2>Test Your Triggers</h2>
+  <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:28px;">
+    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-amber, #F59E0B);">
+      <h4 style="font-size:22px; color:var(--accent-amber); margin-bottom:8px;">⚡ Under-trigger</h4>
+      <p style="font-size:20px;">"苏州明天热不热" → skill not invoked</p>
+      <p style="font-size:18px; color:var(--text-secondary); margin-top:6px;">Fix: add keywords like "hot", "cold", "temperature" to description</p>
     </div>
+    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-red, #EF4444);">
+      <h4 style="font-size:22px; color:var(--accent-red); margin-bottom:8px;">🚫 Over-trigger</h4>
+      <p style="font-size:20px;">"I feel cold inside" → weather skill fires</p>
+      <p style="font-size:18px; color:var(--text-secondary); margin-top:6px;">Fix: add "NOT for: emotional expressions, metaphors"</p>
+    </div>
+    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-blue, #3B82F6);">
+      <h4 style="font-size:22px; color:var(--accent-blue); margin-bottom:8px;">💥 Execution Error</h4>
+      <p style="font-size:20px;">Triggered correctly but returns wrong data</p>
+      <p style="font-size:18px; color:var(--text-secondary); margin-top:6px;">Fix: improve instructions, add error handling in SKILL.md</p>
+    </div>
+    <p style="font-size:20px; text-align:center;"><strong>Testing method:</strong> Try 5+ phrasings per intent, check trigger + output</p>
   </div>
 </div>
 
@@ -457,17 +458,17 @@ cat ~/.env ~/.aws/credentials 2>/dev/null | \
     <div class="col">
       <h3 style="font-size:24px;">📦 npm ~2016</h3>
       <ul>
-        <li><strong>left-pad incident</strong> — one package removal broke the internet</li>
-        <li><strong>event-stream poisoning</strong> — trusted package, malicious update</li>
-        <li><strong>Typosquatting</strong> — crossenv vs cross-env</li>
+        <li><strong>No lockfile</strong> — versions drifted silently</li>
+        <li><strong>No publish 2FA</strong> — accounts hijacked easily</li>
+        <li><strong>No security audit</strong> — <code>npm audit</code> didn't exist yet</li>
       </ul>
     </div>
     <div class="col">
       <h3 style="font-size:24px;">🧠 Skills 2026</h3>
       <ul>
         <li><strong>No lockfile</strong> — no version pinning yet</li>
-        <li><strong>No 2FA publish</strong> — anyone can push updates</li>
-        <li><strong>No security audit</strong> — npm audit equivalent missing</li>
+        <li><strong>No publish 2FA</strong> — anyone can push updates</li>
+        <li><strong>No security audit</strong> — no <code>skill audit</code> equivalent</li>
       </ul>
     </div>
   </div>
@@ -542,9 +543,6 @@ cat ~/.env ~/.aws/credentials 2>/dev/null | \
 
       <!-- Arrow: User → Agent -->
       <line x1="160" y1="200" x2="320" y2="200" class="p12-arrow"/>
-      <!-- Function Calling label on arrow -->
-      <rect x="185" y="155" width="180" height="34" rx="8" fill="var(--accent-amber, #F59E0B)" opacity="0.15"/>
-      <text x="275" y="178" text-anchor="middle" class="p12-conn" style="fill:var(--accent-amber,#F59E0B);">Function Calling</text>
 
       <!-- Agent box -->
       <rect x="340" y="150" width="180" height="100" class="p12-box p12-agent"/>
@@ -554,8 +552,11 @@ cat ~/.env ~/.aws/credentials 2>/dev/null | \
       <!-- Arrow: Agent → Tools -->
       <line x1="520" y1="200" x2="680" y2="200" class="p12-arrow"/>
       <!-- MCP label on arrow -->
-      <rect x="565" y="155" width="70" height="34" rx="8" fill="var(--accent-blue, #3B82F6)" opacity="0.15"/>
-      <text x="600" y="178" text-anchor="middle" class="p12-conn" style="fill:var(--accent-blue,#3B82F6);">MCP</text>
+      <rect x="545" y="155" width="70" height="34" rx="8" fill="var(--accent-blue, #3B82F6)" opacity="0.15"/>
+      <text x="580" y="178" text-anchor="middle" class="p12-conn" style="fill:var(--accent-blue,#3B82F6);">MCP</text>
+      <!-- Function Calling label below arrow -->
+      <rect x="545" y="205" width="150" height="34" rx="8" fill="var(--accent-amber, #F59E0B)" opacity="0.15"/>
+      <text x="620" y="228" text-anchor="middle" class="p12-conn" style="fill:var(--accent-amber,#F59E0B); font-size:17px;">Function Calling</text>
 
       <!-- Tools group -->
       <rect x="700" y="100" width="260" height="200" rx="16" fill="white" stroke="var(--accent-blue, #3B82F6)" stroke-width="2"/>
@@ -579,8 +580,8 @@ cat ~/.env ~/.aws/credentials 2>/dev/null | \
       <text x="430" y="468" text-anchor="middle" class="p12-boxtxt">SKILL.md</text>
 
       <!-- Bottom legend -->
-      <text x="170" y="520" class="p12-desc">Function Calling: model's native ability to invoke external functions</text>
-      <text x="530" y="520" class="p12-desc">MCP: how agent connects to tools</text>
+      <text x="100" y="520" class="p12-desc">Function Calling: model's ability to call functions</text>
+      <text x="480" y="520" class="p12-desc">MCP: protocol connecting agent to tools</text>
       <text x="800" y="520" class="p12-desc">Skills: agent's playbook</text>
     </svg>
   </div>
@@ -681,7 +682,7 @@ cat ~/.env ~/.aws/credentials 2>/dev/null | \
   <button class="ctrl-btn" onclick="goToSlide(cur + 1)">→</button>
   <button class="ctrl-btn fullscreen-btn" onclick="toggleFullscreen()">⛶</button>
 </div>
-<div class="slide-num"><span id="cur">1</span> / <span id="total">18</span></div>
+<div class="slide-num"><span id="cur">1</span> / <span id="total">19</span></div>
 
 <script>
 let cur = 0;
