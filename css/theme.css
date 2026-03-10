@@ -68,9 +68,18 @@ body {
 }
 
 /* Image Slide */
+.slide-image {
+  padding: 40px;
+}
+
 .slide-image .image-container {
   width: 90%;
   max-width: 1000px;
+}
+
+.slide-image .image-container.full {
+  width: 95%;
+  max-width: 1400px;
 }
 
 .slide-image svg {

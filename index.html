@@ -16,36 +16,50 @@
 
 <!-- P2: Timeline -->
 <div class="slide slide-image">
-  <h2>Rapid Adoption</h2>
-  <div class="image-container">
-    <svg viewBox="0 0 1000 200">
+  <div class="image-container full">
+    <svg viewBox="0 0 1200 500">
       <style>
-        .line { stroke: var(--accent-blue, #3B82F6); stroke-width: 3; }
+        .line { stroke: var(--accent-blue, #3B82F6); stroke-width: 4; }
         .dot { fill: var(--accent-blue, #3B82F6); }
         .dot-red { fill: var(--accent-red, #EF4444); }
         .dot-green { fill: var(--accent-green, #10B981); }
-        .txt { font-family: var(--font-main, sans-serif); font-size: 14px; fill: var(--text-primary, #0F172A); font-weight: 600; }
-        .date { font-family: var(--font-main, sans-serif); font-size: 12px; fill: var(--text-secondary, #64748B); }
+        .txt { font-family: var(--font-main, sans-serif); font-size: 22px; fill: var(--text-primary, #0F172A); font-weight: 600; }
+        .date { font-family: var(--font-main, sans-serif); font-size: 18px; fill: var(--text-secondary, #64748B); }
+        .title { font-family: var(--font-main, sans-serif); font-size: 48px; fill: var(--text-primary, #0F172A); font-weight: 700; }
       </style>
-      <line x1="60" y1="100" x2="940" y2="100" class="line"/>
-      <circle cx="120" cy="100" r="10" class="dot"/>
-      <text x="120" y="70" text-anchor="middle" class="txt">Claude Skills</text>
-      <text x="120" y="130" text-anchor="middle" class="date">Oct 16</text>
-      <circle cx="320" cy="100" r="12" class="dot-red"/>
-      <text x="320" y="70" text-anchor="middle" class="txt">Open Standard</text>
-      <text x="320" y="130" text-anchor="middle" class="date">Dec 18</text>
-      <circle cx="420" cy="100" r="10" class="dot"/>
-      <text x="420" y="70" text-anchor="middle" class="txt">Codex</text>
-      <text x="420" y="130" text-anchor="middle" class="date">Dec 19</text>
-      <circle cx="600" cy="100" r="10" class="dot"/>
-      <text x="600" y="70" text-anchor="middle" class="txt">VS Code Copilot</text>
-      <text x="600" y="130" text-anchor="middle" class="date">Jan 8</text>
-      <circle cx="760" cy="100" r="10" class="dot"/>
-      <text x="760" y="70" text-anchor="middle" class="txt">Cursor</text>
-      <text x="760" y="130" text-anchor="middle" class="date">Jan 22</text>
-      <circle cx="900" cy="100" r="12" class="dot-green"/>
-      <text x="900" y="70" text-anchor="middle" class="txt" style="fill: #10B981;">100K+ Skills</text>
-      <text x="900" y="130" text-anchor="middle" class="date">Today</text>
+      
+      <!-- Title in SVG -->
+      <text x="600" y="80" text-anchor="middle" class="title">Rapid Adoption</text>
+      
+      <!-- Timeline -->
+      <line x1="100" y1="250" x2="1100" y2="250" class="line"/>
+      
+      <circle cx="150" cy="250" r="14" class="dot"/>
+      <text x="150" y="200" text-anchor="middle" class="txt">Claude Skills</text>
+      <text x="150" y="310" text-anchor="middle" class="date">Oct 16, 2025</text>
+      
+      <circle cx="380" cy="250" r="16" class="dot-red"/>
+      <text x="380" y="200" text-anchor="middle" class="txt">Open Standard</text>
+      <text x="380" y="310" text-anchor="middle" class="date">Dec 18</text>
+      
+      <circle cx="500" cy="250" r="14" class="dot"/>
+      <text x="500" y="200" text-anchor="middle" class="txt">Codex</text>
+      <text x="500" y="310" text-anchor="middle" class="date">Dec 19</text>
+      
+      <circle cx="700" cy="250" r="14" class="dot"/>
+      <text x="700" y="200" text-anchor="middle" class="txt">VS Code Copilot</text>
+      <text x="700" y="310" text-anchor="middle" class="date">Jan 8, 2026</text>
+      
+      <circle cx="880" cy="250" r="14" class="dot"/>
+      <text x="880" y="200" text-anchor="middle" class="txt">Cursor</text>
+      <text x="880" y="310" text-anchor="middle" class="date">Jan 22</text>
+      
+      <circle cx="1050" cy="250" r="16" class="dot-green"/>
+      <text x="1050" y="200" text-anchor="middle" class="txt" style="fill: #10B981;">100K+ Skills</text>
+      <text x="1050" y="310" text-anchor="middle" class="date">Today</text>
+      
+      <!-- Subtitle -->
+      <text x="600" y="420" text-anchor="middle" class="date" style="font-size: 24px;">All major AI coding platforms adopted in ~3 months</text>
     </svg>
   </div>
 </div>
