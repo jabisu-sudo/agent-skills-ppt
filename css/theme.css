@@ -630,3 +630,31 @@ body {
   font-size: 24px;
   line-height: 1.5;
 }
+
+/* === P3.6 SKILL.md animated highlights === */
+.slide-skillmd .hl-section {
+  transition: background 0.4s ease-out, border-radius 0.4s ease-out;
+  border-radius: 4px;
+  padding: 2px 0;
+}
+.slide-skillmd.active .hl-frontmatter { background: rgba(59,130,246,0.1); animation: hlPulse 0.6s 0.6s ease-out both; }
+.slide-skillmd.active .hl-steps { background: rgba(245,158,11,0.1); animation: hlPulse 0.6s 1.2s ease-out both; }
+.slide-skillmd.active .hl-output { background: rgba(245,158,11,0.08); animation: hlPulse 0.6s 1.6s ease-out both; }
+.slide-skillmd.active .hl-refs { background: rgba(16,185,129,0.1); animation: hlPulse 0.6s 2.0s ease-out both; }
+.slide-skillmd.active .hl-scripts { background: rgba(139,92,246,0.1); animation: hlPulse 0.6s 2.4s ease-out both; }
+
+@keyframes hlPulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.slide-skillmd .hl-annotation {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+.slide-skillmd.active .hl-ann-1 { opacity: 1; transform: translateX(0); transition-delay: 0.6s; }
+.slide-skillmd.active .hl-ann-2 { opacity: 1; transform: translateX(0); transition-delay: 1.2s; }
+.slide-skillmd.active .hl-ann-3 { opacity: 1; transform: translateX(0); transition-delay: 2.0s; }
+.slide-skillmd.active .hl-ann-4 { opacity: 1; transform: translateX(0); transition-delay: 2.4s; }
