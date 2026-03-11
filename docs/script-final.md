@@ -78,6 +78,10 @@ AI 的 system prompt 里只注入每个 skill 的 **name 和 description**，就
 
 知道原理之后，我们聊怎么写好一个 skill。
 
+你可能觉得让 AI 自己写就行了，我之前也这么想。但 SkillsBench 的研究发现：**人写的 skill 显著提升 agent 表现，AI 自己生成的完全没有提升**。所以怎么写很重要，接下来聊几个关键点。
+
+*（来源：SkillsBench, arxiv 2602.12670, 86 tasks across 11 domains）*
+
 #### 1. Description 是路由信号
 
 这是最重要的一点。
