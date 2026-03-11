@@ -425,13 +425,14 @@ body {
 
 /* Code Block - Light theme */
 .code-block {
-  background: #F1F5F9;
-  border: 1px solid #E2E8F0;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F0;
   border-radius: 12px;
   padding: 36px;
   max-width: 1100px;
   width: 100%;
   overflow-x: auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
 .code-block pre {
