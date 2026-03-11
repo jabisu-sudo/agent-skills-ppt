@@ -13,13 +13,14 @@
 <!-- P1: Cover -->
 <div class="slide slide-cover active">
   <h1>Agent Skills</h1>
-  <p class="subtitle">3 Months, 1 Standard, 100K+ Skills</p>
+  <p class="subtitle">Hongwei Ma · March 2026</p>
 </div>
 
 <!-- P2: Timeline -->
 <div class="slide slide-image">
+  <h2>Rapid Adoption</h2>
   <div class="image-container full">
-    <svg viewBox="0 0 1200 500">
+    <svg viewBox="0 0 1200 400">
       <style>
         .line { stroke: var(--accent-blue, #3B82F6); stroke-width: 4; }
         .dot { fill: var(--accent-blue, #3B82F6); }
@@ -27,29 +28,39 @@
         .dot-green { fill: var(--accent-green, #10B981); }
         .txt { font-family: var(--font-main, sans-serif); font-size: 22px; fill: var(--text-primary, #0F172A); font-weight: 600; }
         .date { font-family: var(--font-main, sans-serif); font-size: 18px; fill: var(--text-secondary, #64748B); }
-        .title { font-family: var(--font-main, sans-serif); font-size: 48px; fill: var(--text-primary, #0F172A); font-weight: 700; }
+        .line-fade { stroke: var(--accent-blue, #3B82F6); stroke-width: 4; stroke-dasharray: 12 8; opacity: 0.4; }
       </style>
-      <text x="600" y="80" text-anchor="middle" class="title">Rapid Adoption</text>
-      <line x1="100" y1="250" x2="1100" y2="250" class="line" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-      <circle cx="150" cy="250" r="14" class="dot"/>
-      <text x="150" y="200" text-anchor="middle" class="txt">Claude Skills</text>
-      <text x="150" y="310" text-anchor="middle" class="date">Oct 16, 2025</text>
-      <circle cx="380" cy="250" r="16" class="dot-red"/>
-      <text x="380" y="200" text-anchor="middle" class="txt">Open Standard</text>
-      <text x="380" y="310" text-anchor="middle" class="date">Dec 18</text>
-      <circle cx="500" cy="250" r="14" class="dot"/>
-      <text x="500" y="200" text-anchor="middle" class="txt">Codex</text>
-      <text x="500" y="310" text-anchor="middle" class="date">Dec 19</text>
-      <circle cx="700" cy="250" r="14" class="dot"/>
-      <text x="700" y="200" text-anchor="middle" class="txt">VS Code Copilot</text>
-      <text x="700" y="310" text-anchor="middle" class="date">Jan 8, 2026</text>
-      <circle cx="880" cy="250" r="14" class="dot"/>
-      <text x="880" y="200" text-anchor="middle" class="txt">Cursor</text>
-      <text x="880" y="310" text-anchor="middle" class="date">Jan 22</text>
-      <circle cx="1050" cy="250" r="16" class="dot-green"/>
-      <text x="1050" y="200" text-anchor="middle" class="txt" style="fill: #10B981;">100K+ Skills</text>
-      <text x="1050" y="310" text-anchor="middle" class="date">Today</text>
-      <text x="600" y="420" text-anchor="middle" class="date" style="font-size: 24px;">All major AI coding platforms adopted in ~3 months</text>
+      <!-- Main line -->
+      <line x1="80" y1="200" x2="980" y2="200" class="line" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+      <!-- Fading continuation line (still going) -->
+      <line x1="980" y1="200" x2="1200" y2="200" class="line-fade"/>
+
+      <circle cx="120" cy="200" r="14" class="dot"/>
+      <text x="120" y="150" text-anchor="middle" class="txt">Claude Skills</text>
+      <text x="120" y="260" text-anchor="middle" class="date">Oct 16, 2025</text>
+
+      <circle cx="340" cy="200" r="16" class="dot-red"/>
+      <text x="340" y="150" text-anchor="middle" class="txt">Open Standard</text>
+      <text x="340" y="260" text-anchor="middle" class="date">Dec 18</text>
+
+      <circle cx="450" cy="200" r="14" class="dot"/>
+      <text x="450" y="150" text-anchor="middle" class="txt">Codex</text>
+      <text x="450" y="260" text-anchor="middle" class="date">Dec 19</text>
+
+      <circle cx="640" cy="200" r="14" class="dot"/>
+      <text x="640" y="150" text-anchor="middle" class="txt">VS Code Copilot</text>
+      <text x="640" y="260" text-anchor="middle" class="date">Jan 8, 2026</text>
+
+      <circle cx="800" cy="200" r="14" class="dot"/>
+      <text x="800" y="150" text-anchor="middle" class="txt">Cursor</text>
+      <text x="800" y="260" text-anchor="middle" class="date">Jan 22</text>
+
+      <circle cx="960" cy="200" r="16" class="dot-green"/>
+      <text x="960" y="150" text-anchor="middle" class="txt" style="fill: #10B981;">100K+ Skills</text>
+      <text x="960" y="260" text-anchor="middle" class="date">Today</text>
+
+      <!-- Arrow hint: more to come -->
+      <polygon points="1180,192 1200,200 1180,208" fill="var(--accent-blue, #3B82F6)" opacity="0.4"/>
     </svg>
   </div>
 </div>
