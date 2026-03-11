@@ -52,6 +52,19 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* === P3: click to reveal summary + analogies === */
+.slide-p3 .p3-reveal,
+.slide-p3 hr,
+.slide-p3 hr ~ div {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+.slide-p3.revealed .p3-reveal,
+.slide-p3.revealed hr,
+.slide-p3.revealed hr ~ div {
+  opacity: 1;
+}
+
 /* === P2 Timeline: nodes appear left to right === */
 .slide-image.active circle,
 .slide-image.active text:not(.title) {
