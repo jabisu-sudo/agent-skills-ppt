@@ -32,6 +32,7 @@ body {
 
 /* Slide Base */
 .slide {
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: none;
@@ -56,8 +57,10 @@ body {
 .slide-image.active text:not(.title) {
   animation: nodeAppear 0.5s ease-out both;
 }
-.slide-image.active line {
-  animation: lineGrow 0.8s ease-out both;
+.slide-image.active .line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: lineGrow 1.0s ease-out forwards;
 }
 
 @keyframes nodeAppear {
@@ -207,7 +210,6 @@ body {
 /* Image Slide */
 .slide-image {
   padding: 40px;
-  justify-content: center;
 }
 
 .slide-image .image-container {
@@ -330,9 +332,8 @@ body {
   margin-top: 12px;
 }
 
-/* Slide Dark - vertically center */
+/* Slide Dark */
 .slide-dark {
-  justify-content: center;
 }
 
 /* P8: Security Reality fit 1080p without overflow */

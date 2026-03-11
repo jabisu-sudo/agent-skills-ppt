@@ -92,8 +92,8 @@
 
 <!-- P2: Timeline -->
 <div class="slide slide-image">
-  <h2>Rapid Adoption</h2>
-  <div class="image-container full">
+  <h2>Background</h2>
+  <div class="image-container full" style="flex:1; display:flex; align-items:flex-start; padding-top:6vh;">
     <svg viewBox="0 0 1200 400">
       <style>
         .line { stroke: var(--accent-blue, #3B82F6); stroke-width: 4; }
@@ -105,8 +105,8 @@
         .line-fade { stroke: var(--accent-blue, #3B82F6); stroke-width: 4; stroke-dasharray: 12 8; opacity: 0.4; }
       </style>
       <!-- Main line -->
-      <line x1="80" y1="200" x2="980" y2="200" class="line" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-      <!-- Fading continuation line (still going) -->
+      <line x1="80" y1="200" x2="980" y2="200" class="line"/>
+      <!-- Dashed continuation -->
       <line x1="980" y1="200" x2="1200" y2="200" class="line-fade"/>
 
       <circle cx="120" cy="200" r="14" class="dot"/>
@@ -129,21 +129,26 @@
       <text x="700" y="150" text-anchor="middle" class="txt">Cursor</text>
       <text x="700" y="260" text-anchor="middle" class="date">Jan 22</text>
 
+      <!-- Today -->
       <circle cx="960" cy="200" r="16" class="dot-green"/>
-      <text x="960" y="150" text-anchor="middle" class="txt" style="fill: #10B981;">100K+ Skills</text>
-      <text x="960" y="260" text-anchor="middle" class="date">Today</text>
+      <text x="960" y="148" text-anchor="middle" class="txt" style="fill: #10B981; font-size:26px; font-weight:800; animation-delay:1.3s;">425K+ Skills</text>
+      <text x="960" y="260" text-anchor="middle" class="date" style="animation-delay:1.3s;">Today</text>
+      <text x="960" y="290" text-anchor="middle" class="date" style="font-size:15px; animation-delay:1.3s;">SkillsMP · ClawhHub · SkillHub · ...</text>
+      <text x="960" y="314" text-anchor="middle" class="date" style="font-size:14px; font-style:italic; animation-delay:1.3s;">Not just code — life, work, everything</text>
+
 
       <!-- Arrow hint: more to come -->
       <polygon points="1180,192 1200,200 1180,208" fill="var(--accent-blue, #3B82F6)" opacity="0.4"/>
     </svg>
   </div>
+  <p style="position:absolute; bottom:35px; left:50px; font-size:13px; color:var(--text-secondary);">Source: skillsmp.com (Mar 2026)</p>
 </div>
 
 <!-- ========== PART 2: 核心价值 → 结构 ========== -->
 
 <!-- P3: Core Values -->
-<div class="slide" style="justify-content:center;">
-  <h2 style="margin-bottom:60px;">Core Values</h2>
+<div class="slide">
+  <h2>Core Values</h2>
   <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:40px; max-width:1100px; width:100%;">
     <div style="background:white; border-radius:16px; padding:48px 36px; box-shadow:var(--card-shadow); border-top:4px solid var(--accent-blue, #3B82F6); text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center;">
       <div style="font-size:56px; margin-bottom:24px;">♻️</div>
@@ -430,7 +435,7 @@ NOT for: email or Slack.&lt;/description&gt;
 <!-- P7: 自由度 -->
 <div class="slide">
   <h2>Constraint Spectrum</h2>
-  <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:24px; flex:1; justify-content:center;">
+  <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:24px; flex:1;">
     <div style="background:white; border-radius:16px; padding:36px 40px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-blue, #3B82F6);">
       <h4 style="font-size:24px; margin-bottom:12px;">🧱 High Constraint</h4>
       <div class="code-block" style="font-size:17px;">
@@ -460,7 +465,7 @@ Choose format based on user needs.</code></pre>
 <!-- P7b: 测试触发 -->
 <div class="slide">
   <h2>Test Your Triggers</h2>
-  <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:40px; flex:1; justify-content:center;">
+  <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:40px; flex:1;">
     <div style="background:white; border-radius:16px; padding:36px 40px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-amber, #F59E0B);">
       <h4 style="font-size:24px; color:var(--accent-amber); margin-bottom:12px;">⚡ Under-trigger</h4>
       <p style="font-size:22px;">"苏州明天热不热" → skill not invoked</p>
@@ -482,7 +487,7 @@ Choose format based on user needs.</code></pre>
 <!-- P7.5: 结构建议 -->
 <div class="slide">
   <h2>Structural Tips</h2>
-  <div style="max-width:900px; display:flex; flex-direction:column; gap:36px; flex:1; justify-content:center;">
+  <div style="max-width:900px; display:flex; flex-direction:column; gap:36px; flex:1;">
     <div style="background:white; border-radius:16px; padding:36px 40px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-blue, #3B82F6);">
       <h4 style="font-size:24px; margin-bottom:10px;">📏 Keep It Short</h4>
       <p style="font-size:22px; color:var(--text-secondary);">SKILL.md under <strong>500 lines</strong>. Longer → more AI errors.</p>
