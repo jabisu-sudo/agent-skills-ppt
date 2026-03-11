@@ -196,68 +196,46 @@
   <p class="p3-reveal" style="margin-top:44px; font-size:26px; color:var(--text-secondary); text-align:center;">Modular software architecture, applied to <strong style="color:var(--text-primary);">context engineering</strong>.</p>
 </div>
 
-<!-- P3.5: Skill Structure（文件树） -->
+<!-- P4: Skill Structure（左树 + 右独立卡片） -->
 <div class="slide">
-  <h2>What's in a Skill?</h2>
-  <div style="display:flex; justify-content:center; align-items:flex-start; flex:1; width:100%; padding-top:0;">
-    <svg viewBox="0 0 1000 430" style="width:90%; max-width:1100px;">
-      <style>
-        .tree-text { font-family: var(--font-mono, monospace); font-size: 22px; fill: var(--text-primary, #0F172A); }
-        .tree-line { stroke: #CBD5E1; stroke-width: 2; fill: none; }
-        .tree-label { font-family: var(--font-main, sans-serif); font-size: 18px; fill: var(--text-secondary, #64748B); }
-        .tree-highlight { font-family: var(--font-mono, monospace); font-size: 22px; fill: var(--accent-blue, #3B82F6); font-weight: 700; }
-        .tree-badge { font-family: var(--font-main, sans-serif); font-size: 14px; fill: white; font-weight: 600; }
-      </style>
-
-      <!-- Folder name -->
-      <text x="60" y="40" class="tree-text">📁 weather/</text>
-
-      <!-- Vertical trunk line: from y=55 down to last branch (assets at y=350) -->
-      <line x1="90" y1="55" x2="90" y2="350" class="tree-line"/>
-
-      <!-- SKILL.md branch -->
-      <line x1="90" y1="85" x2="120" y2="85" class="tree-line"/>
-      <text x="130" y="90" class="tree-highlight">SKILL.md</text>
-      <rect x="300" y="73" width="80" height="26" rx="6" fill="var(--accent-red, #EF4444)"/>
-      <text x="340" y="91" text-anchor="middle" class="tree-badge">Required</text>
-      <text x="400" y="90" class="tree-label">Entry point: description + instructions</text>
-
-      <!-- scripts/ branch -->
-      <line x1="90" y1="150" x2="120" y2="150" class="tree-line"/>
-      <text x="130" y="155" class="tree-text">scripts/</text>
-      <!-- sub-branch -->
-      <line x1="150" y1="165" x2="150" y2="195" class="tree-line"/>
-      <line x1="150" y1="195" x2="180" y2="195" class="tree-line"/>
-      <text x="190" y="200" class="tree-text">fetch.py</text>
-      <text x="400" y="175" class="tree-label">Executable code the AI can run</text>
-
-      <!-- references/ branch -->
-      <line x1="90" y1="250" x2="120" y2="250" class="tree-line"/>
-      <text x="130" y="255" class="tree-text">references/</text>
-      <!-- sub-branch -->
-      <line x1="150" y1="265" x2="150" y2="295" class="tree-line"/>
-      <line x1="150" y1="295" x2="180" y2="295" class="tree-line"/>
-      <text x="190" y="300" class="tree-text">api-docs.md</text>
-      <text x="400" y="275" class="tree-label">Loaded on demand, not upfront</text>
-
-      <!-- assets/ branch (last — no continuation below) -->
-      <line x1="90" y1="350" x2="120" y2="350" class="tree-line"/>
-      <text x="130" y="355" class="tree-text">assets/</text>
-      <!-- sub-branch -->
-      <line x1="150" y1="365" x2="150" y2="395" class="tree-line"/>
-      <line x1="150" y1="395" x2="180" y2="395" class="tree-line"/>
-      <text x="190" y="400" class="tree-text">template.json</text>
-      <text x="400" y="375" class="tree-label">Templates, configs, static files</text>
-
-      <!-- Bottom note -->
-      <text x="60" y="430" class="tree-label" style="font-size:20px;">A skill is a folder — not just a markdown file.</text>
-    </svg>
+  <h2>Skill Folder Structure</h2>
+  <div style="display:flex; gap:40px; align-items:center; max-width:1100px; width:100%; margin-top:40px;">
+    <!-- Left: tree card -->
+    <div style="flex:1; background:white; border-radius:16px; padding:48px 56px; box-shadow:var(--card-shadow);">
+      <pre style="margin:0; font-family:var(--font-mono); font-size:24px; line-height:2.2; color:var(--text-primary);"><code>weather/
+├── <span style="color:var(--accent-blue); font-weight:700;">SKILL.md</span>  <span style="background:#EF4444; color:white; font-size:12px; font-weight:600; padding:2px 10px; border-radius:5px;">Required</span>
+├── <span style="color:var(--accent-amber); font-weight:600;">scripts/</span>
+│   └── fetch.py
+├── <span style="color:var(--accent-green); font-weight:600;">references/</span>
+│   └── api-docs.md
+└── <span style="color:#64748B; font-weight:600;">assets/</span>
+    └── template.json</code></pre>
+    </div>
+    <!-- Right: 4 independent cards -->
+    <div style="flex:0 0 auto; display:flex; flex-direction:column; gap:16px; white-space:nowrap;">
+      <div style="background:white; border-radius:12px; padding:20px 28px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-blue);">
+        <h4 style="font-family:var(--font-mono); font-size:19px; color:var(--accent-blue); margin-bottom:4px;">SKILL.md</h4>
+        <p style="font-size:17px; color:var(--text-secondary);">Entry point — name, trigger rules, instructions</p>
+      </div>
+      <div style="background:white; border-radius:12px; padding:20px 28px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-amber);">
+        <h4 style="font-family:var(--font-mono); font-size:19px; color:var(--accent-amber); margin-bottom:4px;">scripts/</h4>
+        <p style="font-size:17px; color:var(--text-secondary);">Run via bash — deterministic, no context cost</p>
+      </div>
+      <div style="background:white; border-radius:12px; padding:20px 28px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-green);">
+        <h4 style="font-family:var(--font-mono); font-size:19px; color:var(--accent-green); margin-bottom:4px;">references/</h4>
+        <p style="font-size:17px; color:var(--text-secondary);">Docs & schemas — loaded when referenced</p>
+      </div>
+      <div style="background:white; border-radius:12px; padding:20px 28px; box-shadow:var(--card-shadow); border-left:4px solid #94A3B8;">
+        <h4 style="font-family:var(--font-mono); font-size:19px; color:#64748B; margin-bottom:4px;">assets/</h4>
+        <p style="font-size:17px; color:var(--text-secondary);">Templates, configs, static files</p>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- P3.6: Inside SKILL.md — full document with animated highlights -->
-<div class="slide slide-skillmd">
-  <h2>Inside SKILL.md</h2>
+<!-- P5: How Progressive Disclosure Works — merged slide -->
+<div class="slide slide-skillmd slide-p5">
+  <h2>How Progressive Disclosure Works</h2>
   <div style="display:flex; gap:40px; align-items:flex-start; max-width:1200px; width:100%; margin-top:10px;">
     <!-- Left: full SKILL.md -->
     <div class="code-block" style="font-size:15px; flex:1; padding:28px 32px; position:relative; line-height:1.55;">
@@ -274,9 +252,9 @@ description: >
 1. Parse city name from user input
 2. Call: curl wttr.in/{city}?format=j1
 3. Format: temp, humidity, wind
-4. Fallback: Open-Meteo if wttr.in fails</span>
+4. Fallback: Open-Meteo if wttr.in fails
 
-<span class="hl-section hl-output">## Output Format
+## Output Format
 🌡️ {temp}°C, {condition}
 Tomorrow: {high}/{low}°C</span>
 
@@ -288,149 +266,26 @@ See <strong>references/error-codes.md</strong> for status codes</span>
 Run <strong>scripts/fetch.py</strong> {city}
 Run <strong>scripts/format.py</strong> --json</span></code></pre>
     </div>
-    <!-- Right: annotations that appear in sequence -->
-    <div style="flex:0 0 340px; display:flex; flex-direction:column; gap:16px; padding-top:4px;">
-      <div class="hl-annotation hl-ann-1" style="border-left:4px solid var(--accent-blue, #3B82F6); padding:12px 16px; background:#EFF6FF; border-radius:0 12px 12px 0;">
-        <h4 style="font-size:16px; color:var(--accent-blue); margin-bottom:4px;">📋 Frontmatter</h4>
-        <p style="font-size:14px; color:var(--text-secondary); line-height:1.4;">Extracted as <strong>routing signal</strong>.<br>Name + description injected into system prompt.</p>
+    <!-- Right: three annotation cards for the three loading levels -->
+    <div style="flex:0 0 360px; display:flex; flex-direction:column; gap:18px; padding-top:4px;">
+      <div class="hl-annotation hl-ann-1" style="border-left:4px solid var(--accent-blue, #3B82F6); padding:14px 18px; background:#EFF6FF; border-radius:0 12px 12px 0;">
+        <h4 style="font-size:17px; color:var(--accent-blue); margin-bottom:6px;">Layer 1: Route</h4>
+        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Injected into system prompt:</p>
+        <div style="background:white; border:1px solid #DBEAFE; border-radius:6px; padding:8px 10px; margin-top:8px; font-family:monospace; font-size:11px; line-height:1.6; color:#64748B;">
+          <span style="color:var(--accent-blue);">weather</span> → forecasts via wttr.in<br>
+          <span style="color:var(--accent-blue);">github</span> &nbsp;→ PRs, issues, CI<br>
+          <span style="color:var(--accent-blue);">imsg</span> &nbsp;&nbsp;&nbsp;→ send iMessage<br>
+          <span style="color:#94A3B8;">+47 more...</span>
+        </div>
       </div>
-      <div class="hl-annotation hl-ann-2" style="border-left:4px solid var(--accent-amber, #F59E0B); padding:12px 16px; background:#FFFBEB; border-radius:0 12px 12px 0;">
-        <h4 style="font-size:16px; color:var(--accent-amber); margin-bottom:4px;">⚡ Steps & Output</h4>
-        <p style="font-size:14px; color:var(--text-secondary); line-height:1.4;">Loaded on match.<br>Dropped after task completes.</p>
+      <div class="hl-annotation hl-ann-2" style="border-left:4px solid var(--accent-amber, #F59E0B); padding:14px 18px; background:#FFFBEB; border-radius:0 12px 12px 0;">
+        <h4 style="font-size:17px; color:var(--accent-amber); margin-bottom:6px;">Layer 2: Load</h4>
+        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">SKILL.md body loaded when matched. Full instructions for the task.</p>
       </div>
-      <div class="hl-annotation hl-ann-3" style="border-left:4px solid var(--accent-green, #10B981); padding:12px 16px; background:#ECFDF5; border-radius:0 12px 12px 0;">
-        <h4 style="font-size:16px; color:var(--accent-green); margin-bottom:4px;">📂 References</h4>
-        <p style="font-size:14px; color:var(--text-secondary); line-height:1.4;">Maps to <code>references/</code> folder.<br>Read only when needed — lazy loaded.</p>
+      <div class="hl-annotation hl-ann-3" style="border-left:4px solid var(--accent-green, #10B981); padding:14px 18px; background:#ECFDF5; border-radius:0 12px 12px 0;">
+        <h4 style="font-size:17px; color:var(--accent-green); margin-bottom:6px;">Layer 3: On Demand</h4>
+        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">references/ and scripts/ read only when needed. Keeps context minimal.</p>
       </div>
-      <div class="hl-annotation hl-ann-4" style="border-left:4px solid #8B5CF6; padding:12px 16px; background:#F5F3FF; border-radius:0 12px 12px 0;">
-        <h4 style="font-size:16px; color:#8B5CF6; margin-bottom:4px;">⚙️ Scripts</h4>
-        <p style="font-size:14px; color:var(--text-secondary); line-height:1.4;">Maps to <code>scripts/</code> folder.<br>Executable code AI can invoke.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- P4: Context Window 架构 -->
-<div class="slide">
-  <h2>How Skills Save Context</h2>
-  <div style="display:flex; justify-content:center; align-items:center; flex:1; padding: 20px 0; width:100%;">
-    <svg viewBox="0 0 1100 520" style="width:95%; max-width:1200px;">
-      <style>
-        .p4-title { font-family: var(--font-main, sans-serif); font-size: 22px; fill: var(--text-primary, #0F172A); font-weight: 700; }
-        .p4-label { font-family: var(--font-main, sans-serif); font-size: 20px; fill: var(--text-secondary, #64748B); font-weight: 600; }
-        .p4-item { font-family: var(--font-mono, monospace); font-size: 18px; fill: var(--text-primary, #0F172A); }
-        .p4-badge { font-family: var(--font-main, sans-serif); font-size: 28px; fill: white; font-weight: 700; }
-        .p4-big { font-family: var(--font-main, sans-serif); font-size: 48px; fill: var(--accent-blue, #3B82F6); font-weight: 800; }
-        .p4-note { font-family: var(--font-main, sans-serif); font-size: 20px; fill: var(--text-secondary, #64748B); }
-        .p4-arrow { stroke: var(--accent-blue, #3B82F6); stroke-width: 3; fill: none; marker-end: url(#p4arrow); }
-      </style>
-      <defs>
-        <marker id="p4arrow" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
-          <polygon points="0 0, 12 4, 0 8" fill="var(--accent-blue, #3B82F6)"/>
-        </marker>
-      </defs>
-
-      <!-- Layer 1: Always Loaded - Routing Index -->
-      <rect x="30" y="20" width="320" height="280" rx="16" fill="white" stroke="var(--accent-blue, #3B82F6)" stroke-width="3"/>
-      <rect x="30" y="20" width="320" height="50" rx="16" fill="var(--accent-blue, #3B82F6)"/>
-      <rect x="30" y="54" width="320" height="16" fill="var(--accent-blue, #3B82F6)"/>
-      <text x="190" y="54" text-anchor="middle" class="p4-badge">📋 Layer 1: Route</text>
-      <text x="50" y="110" class="p4-item">weather → forecasts</text>
-      <text x="50" y="145" class="p4-item">github → PRs, issues</text>
-      <text x="50" y="180" class="p4-item">imsg → send iMessage</text>
-      <text x="50" y="215" class="p4-item">coding → delegate tasks</text>
-      <text x="50" y="255" class="p4-label" style="font-style:italic;">+46 more skills...</text>
-      <text x="190" y="330" text-anchor="middle" class="p4-label">Always in system prompt</text>
-      <text x="190" y="358" text-anchor="middle" class="p4-label" style="fill:var(--accent-blue,#3B82F6); font-weight:700;">Just a few hundred tokens</text>
-
-      <!-- Arrow 1→2 -->
-      <line x1="370" y1="160" x2="430" y2="160" class="p4-arrow"/>
-      <text x="400" y="140" text-anchor="middle" class="p4-label" style="font-size:16px;">match</text>
-
-      <!-- Layer 2: On-Demand - SKILL.md -->
-      <rect x="450" y="40" width="280" height="240" rx="16" fill="white" stroke="var(--accent-amber, #F59E0B)" stroke-width="3"/>
-      <rect x="450" y="40" width="280" height="50" rx="16" fill="var(--accent-amber, #F59E0B)"/>
-      <rect x="450" y="74" width="280" height="16" fill="var(--accent-amber, #F59E0B)"/>
-      <text x="590" y="74" text-anchor="middle" class="p4-badge">📄 Layer 2: Load</text>
-      <text x="470" y="130" class="p4-item">## Steps</text>
-      <text x="470" y="165" class="p4-item">1. Check wttr.in</text>
-      <text x="470" y="200" class="p4-item">2. Format output</text>
-      <text x="470" y="235" class="p4-item">3. Handle errors</text>
-      <text x="590" y="310" text-anchor="middle" class="p4-label">Loaded when matched</text>
-      <text x="590" y="338" text-anchor="middle" class="p4-label" style="fill:var(--accent-amber,#F59E0B); font-weight:700;">~200-500 tokens</text>
-
-      <!-- Arrow 2→3 -->
-      <line x1="750" y1="160" x2="810" y2="160" class="p4-arrow"/>
-      <text x="780" y="140" text-anchor="middle" class="p4-label" style="font-size:16px;">done</text>
-
-      <!-- Layer 3: Referenced files -->
-      <rect x="830" y="60" width="240" height="200" rx="16" fill="white" stroke="var(--accent-green, #10B981)" stroke-width="3"/>
-      <rect x="830" y="60" width="240" height="50" rx="16" fill="var(--accent-green, #10B981)"/>
-      <rect x="830" y="94" width="240" height="16" fill="var(--accent-green, #10B981)"/>
-      <text x="950" y="94" text-anchor="middle" class="p4-badge">🗑️ Layer 3: Unload</text>
-      <text x="850" y="150" class="p4-item">Task complete →</text>
-      <text x="850" y="185" class="p4-item">context released</text>
-      <text x="850" y="220" class="p4-item">Load again when needed</text>
-      <text x="950" y="290" text-anchor="middle" class="p4-label">Use it, then discard</text>
-      <text x="950" y="318" text-anchor="middle" class="p4-label" style="fill:var(--accent-green,#10B981); font-weight:700;">Ephemeral</text>
-
-      <!-- Bottom summary -->
-      <rect x="250" y="400" width="600" height="100" rx="16" fill="var(--bg-primary, #F8FAFC)" stroke="#E2E8F0" stroke-width="2"/>
-      <text x="550" y="440" text-anchor="middle" class="p4-big">50 skills → a few hundred tokens</text>
-      <text x="550" y="478" text-anchor="middle" class="p4-note" style="font-size:22px;">Without skills: 50 full prompts → tens of thousands of tokens 🔥</text>
-    </svg>
-  </div>
-</div>
-
-<!-- P5: System Prompt 示例 -->
-<div class="slide">
-  <h2>What It Actually Looks Like</h2>
-  <div class="two-column" style="gap: 30px;">
-    <div class="col">
-      <h3 style="font-size:22px; margin-bottom:12px;">📋 System Prompt (routing info)</h3>
-      <div class="code-block" style="font-size:15px;">
-        <pre><code>&lt;available_skills&gt;
-  &lt;skill&gt;
-    &lt;name&gt;weather&lt;/name&gt;
-    &lt;description&gt;Get weather and forecasts.
-Use when: user asks about weather.
-NOT for: historical data.&lt;/description&gt;
-    &lt;location&gt;~/.skills/weather/SKILL.md&lt;/location&gt;
-  &lt;/skill&gt;
-  &lt;skill&gt;
-    &lt;name&gt;github&lt;/name&gt;
-    &lt;description&gt;GitHub via gh CLI: PRs, issues.
-Use when: checking PR status, CI runs.
-NOT for: bulk repo operations.&lt;/description&gt;
-    &lt;location&gt;~/.skills/github/SKILL.md&lt;/location&gt;
-  &lt;/skill&gt;
-  &lt;skill&gt;
-    &lt;name&gt;imsg&lt;/name&gt;
-    &lt;description&gt;Send iMessage/SMS via CLI.
-Use when: user wants to text someone.
-NOT for: email or Slack.&lt;/description&gt;
-    &lt;location&gt;~/.skills/imsg/SKILL.md&lt;/location&gt;
-  &lt;/skill&gt;
-  &lt;!-- +47 more skills... --&gt;
-&lt;/available_skills&gt;</code></pre>
-      </div>
-      <p style="color: var(--text-secondary); font-size:17px; margin-top:10px;">50 skills ≈ a few hundred tokens</p>
-    </div>
-    <div class="col">
-      <h3 style="font-size:22px; margin-bottom:12px;">⚡ SKILL.md (loaded on match)</h3>
-      <div class="code-block" style="font-size:15px;">
-        <pre><code>## Weather Skill
-### Steps
-1. Parse city name from user input
-2. Call: curl -s "wttr.in/{city}?format=j1"
-3. Format: temp, humidity, wind, forecast
-4. Fallback: Open-Meteo API if wttr.in fails
-
-### Output Format
-- Current: 🌡️ {temp}°C, {condition}
-- Tomorrow: {high}/{low}°C</code></pre>
-      </div>
-      <p style="color: var(--text-secondary); font-size:17px; margin-top:10px;">Dropped from context after task completes.</p>
     </div>
   </div>
 </div>
@@ -838,7 +693,7 @@ document.getElementById('total').textContent = totalSlides;
 
 function goToSlide(n) {
   if (n < 0 || n >= totalSlides) return;
-  slides.forEach(s => { s.classList.remove('active'); s.classList.remove('revealed'); });
+  slides.forEach(s => { s.classList.remove('active', 'revealed', 'reveal-1', 'reveal-2', 'reveal-3'); });
   document.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
   slides[n].classList.add('active');
   document.querySelectorAll('.nav-dot')[n].classList.add('active');
@@ -884,12 +739,19 @@ function toggleFullscreen() {
 }
 
 document.addEventListener('keydown', e => {
-  // P3: first click/right reveals analogies, second advances
+  // P3: first click reveals analogies, second advances
   const p3 = document.querySelector('.slide-p3');
   if ((e.key === 'ArrowRight' || e.key === ' ') && p3 && p3.classList.contains('active') && !p3.classList.contains('revealed')) {
     e.preventDefault();
     p3.classList.add('revealed');
     return;
+  }
+  // P5: click-to-reveal three layers one by one
+  const p5 = document.querySelector('.slide-p5');
+  if ((e.key === 'ArrowRight' || e.key === ' ') && p5 && p5.classList.contains('active')) {
+    if (!p5.classList.contains('reveal-1')) { e.preventDefault(); p5.classList.add('reveal-1'); return; }
+    if (!p5.classList.contains('reveal-2')) { e.preventDefault(); p5.classList.add('reveal-2'); return; }
+    if (!p5.classList.contains('reveal-3')) { e.preventDefault(); p5.classList.add('reveal-3'); return; }
   }
   if (e.key === 'ArrowRight' || e.key === ' ') goToSlide(cur + 1);
   if (e.key === 'ArrowLeft') goToSlide(cur - 1);
