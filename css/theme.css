@@ -183,8 +183,8 @@ body {
   font-size: var(--title-size);
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 34px;
-  margin-top: 10px;
+  margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 /* Cover */
@@ -202,27 +202,12 @@ body {
 .slide-cover .subtitle {
   font-size: 24px;
   color: var(--text-secondary);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  align-items: center;
-}
-
-.cover-skill-icon {
-  margin-top: 28px;
-  width: 320px;
-  max-width: 42vw;
-  opacity: 0.92;
-}
-.cover-skill-icon svg {
-  width: 100%;
-  height: auto;
 }
 
 /* Image Slide */
 .slide-image {
-  padding: 60px 80px 40px;
-  justify-content: flex-start;
+  padding: 40px;
+  justify-content: center;
 }
 
 .slide-image .image-container {
@@ -345,15 +330,15 @@ body {
   margin-top: 12px;
 }
 
-/* Slide Dark */
+/* Slide Dark - vertically center */
 .slide-dark {
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 /* P8: Security Reality fit 1080p without overflow */
 .slide.p8-security h2 {
   font-size: 52px;
-  margin-top: 10px;
+  margin-top: 0;
   margin-bottom: 24px;
 }
 
@@ -644,63 +629,4 @@ body {
 .challenge-item p {
   font-size: 24px;
   line-height: 1.5;
-}
-
-
-/* P3.6: full SKILL.md with animated highlight regions */
-.skill-md-stage {
-  width: 100%;
-  max-width: 1080px;
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.skill-md-doc {
-  position: relative;
-  padding: 24px 28px;
-}
-
-.skill-md-doc code {
-  font-size: 15px;
-  line-height: 1.45;
-}
-
-.hl-box {
-  position: absolute;
-  border: 3px solid;
-  border-radius: 10px;
-  pointer-events: none;
-  opacity: 0;
-  animation: pulseHighlight 12s infinite;
-  background: rgba(255,255,255,0.35);
-}
-.hl-box span {
-  position: absolute;
-  top: -24px;
-  left: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 999px;
-  color: white;
-}
-.hl-frontmatter { top: 18px; left: 18px; right: 18px; height: 136px; border-color: var(--accent-blue); animation-delay: 0s; }
-.hl-frontmatter span { background: var(--accent-blue); }
-.hl-description { top: 64px; left: 18px; right: 18px; height: 86px; border-color: #6366F1; animation-delay: 2s; }
-.hl-description span { background: #6366F1; }
-.hl-steps { top: 176px; left: 18px; right: 18px; height: 122px; border-color: var(--accent-green); animation-delay: 4s; }
-.hl-steps span { background: var(--accent-green); }
-.hl-references { top: 302px; left: 18px; right: 18px; height: 74px; border-color: var(--accent-amber); animation-delay: 6s; }
-.hl-references span { background: var(--accent-amber); }
-.hl-scripts { top: 380px; left: 18px; right: 18px; height: 74px; border-color: #EC4899; animation-delay: 8s; }
-.hl-scripts span { background: #EC4899; }
-.hl-output { top: 458px; left: 18px; right: 18px; height: 78px; border-color: var(--accent-red); animation-delay: 10s; }
-.hl-output span { background: var(--accent-red); }
-
-@keyframes pulseHighlight {
-  0%, 8% { opacity: 0; transform: scale(0.995); }
-  10%, 20% { opacity: 1; transform: scale(1); }
-  24%, 100% { opacity: 0; transform: scale(1.005); }
 }
