@@ -283,16 +283,12 @@ NOT for: email or Slack.&lt;/description&gt;
   &lt;!-- +47 more skills... --&gt;
 &lt;/available_skills&gt;</code></pre>
       </div>
-      <p style="color: var(--text-secondary); font-size:16px; margin-top:8px;">50 skills ≈ a few hundred tokens of routing info</p>
+      <p style="color: var(--text-secondary); font-size:17px; margin-top:10px;">50 skills ≈ a few hundred tokens</p>
     </div>
     <div class="col">
       <h3 style="font-size:22px; margin-bottom:12px;">⚡ SKILL.md (loaded on match)</h3>
       <div class="code-block" style="font-size:15px;">
-        <pre><code># User: "What's the weather in Suzhou?"
-# → AI matches "weather" skill
-# → Reads full SKILL.md into context:
-
-## Weather Skill
+        <pre><code>## Weather Skill
 ### Steps
 1. Parse city name from user input
 2. Call: curl -s "wttr.in/{city}?format=j1"
@@ -303,8 +299,7 @@ NOT for: email or Slack.&lt;/description&gt;
 - Current: 🌡️ {temp}°C, {condition}
 - Tomorrow: {high}/{low}°C</code></pre>
       </div>
-      <h3 style="font-size:22px; margin-top:20px; margin-bottom:12px;">🗑️ After Task</h3>
-      <p style="color: var(--text-secondary); font-size:18px;">SKILL.md dropped from context → tokens freed.<br>Next request may load a completely different skill.</p>
+      <p style="color: var(--text-secondary); font-size:17px; margin-top:10px;">Dropped from context after task completes.</p>
     </div>
   </div>
 </div>
@@ -314,128 +309,80 @@ NOT for: email or Slack.&lt;/description&gt;
 <!-- P6: Description 是路由信号 -->
 <div class="slide">
   <h2>Description = Routing Signal</h2>
-  <div class="highlight-box">
+  <div class="highlight-box" style="margin-bottom:32px;">
     <p class="big-quote">"Not documentation for humans — a routing signal for AI."</p>
   </div>
-  <div class="examples-row" style="margin-top: 24px;">
+  <div class="examples-row">
     <div class="example bad">
-      <h4>❌ Bad</h4>
+      <h4>❌ Vague</h4>
       <p>"A weather tool"</p>
-      <p style="margin-top:6px; font-size:16px; color:var(--text-secondary);">No trigger, no boundary → random firing</p>
     </div>
-    <div class="example bad">
-      <h4>❌ Bad</h4>
-      <p>"Helps you manage GitHub stuff"</p>
-      <p style="margin-top:6px; font-size:16px; color:var(--text-secondary);">2nd person, vague scope → conflicts with other tools</p>
-    </div>
-    <div class="example bad">
-      <h4>❌ Bad</h4>
-      <p>"This skill sends messages to people via iMessage on macOS using AppleScript and the Messages app"</p>
-      <p style="margin-top:6px; font-size:16px; color:var(--text-secondary);">Implementation details, no trigger conditions</p>
-    </div>
-  </div>
-  <div class="examples-row" style="margin-top: 16px;">
-    <div class="example good">
-      <h4>✅ Good</h4>
-      <p>"Get current weather and forecasts via wttr.in.<br>
+    <div class="example good" style="flex:2;">
+      <h4>✅ Precise</h4>
+      <p>"Get weather and forecasts via wttr.in.<br>
       <strong>Use when:</strong> user asks about weather, temperature, or forecasts.<br>
       <strong>NOT for:</strong> historical data, severe weather alerts."</p>
     </div>
-    <div class="example good">
-      <h4>✅ Good</h4>
-      <p>"GitHub operations via gh CLI: issues, PRs, CI runs.<br>
-      <strong>Use when:</strong> checking PR status, creating issues, viewing logs.<br>
-      <strong>NOT for:</strong> complex web UI flows, bulk cross-repo ops."</p>
-    </div>
   </div>
-  <div style="margin-top:20px; text-align:center; color:var(--text-secondary); font-size:20px;">
-    <strong>3 rules:</strong> Use 3rd person · State trigger conditions · Define boundaries with "NOT for"
-  </div>
+  <p style="margin-top:28px; text-align:center; font-size:22px; color:var(--text-secondary);">
+    <strong>3rd person · Trigger conditions · "NOT for" boundaries</strong>
+  </p>
 </div>
 
 <!-- P7: 自由度 -->
 <div class="slide">
   <h2>Constraint Spectrum</h2>
-  <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:28px;">
-    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-blue, #3B82F6);">
-      <h4 style="font-size:22px; margin-bottom:10px;">🧱 High Constraint (Narrow Bridge)</h4>
-      <div class="code-block" style="font-size:16px; margin-bottom:8px;">
-        <pre><code>## Required Command
-curl -s "wttr.in/{city}?format=3"
+  <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:36px; flex:1; justify-content:center;">
+    <div style="background:white; border-radius:16px; padding:36px 40px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-blue, #3B82F6);">
+      <h4 style="font-size:24px; margin-bottom:12px;">🧱 High Constraint</h4>
+      <div class="code-block" style="font-size:17px;">
+        <pre><code>curl -s "wttr.in/{city}?format=3"
 Do NOT use any other weather API.</code></pre>
       </div>
-      <p style="font-size:18px; color:var(--text-secondary);">Best for: specific APIs, exact CLI syntax, security-sensitive ops</p>
     </div>
-    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-green, #10B981);">
-      <h4 style="font-size:22px; margin-bottom:10px;">🌄 Low Constraint (Open Field)</h4>
-      <div class="code-block" style="font-size:16px; margin-bottom:8px;">
-        <pre><code>## Options
-- wttr.in (simple) or Open-Meteo (detailed)
-- Choose format based on user needs</code></pre>
+    <div style="background:white; border-radius:16px; padding:36px 40px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-green, #10B981);">
+      <h4 style="font-size:24px; margin-bottom:12px;">🌄 Low Constraint</h4>
+      <div class="code-block" style="font-size:17px;">
+        <pre><code>Use wttr.in or Open-Meteo.
+Choose format based on user needs.</code></pre>
       </div>
-      <p style="font-size:18px; color:var(--text-secondary);">Best for: creative tasks, multi-tool scenarios, flexible output</p>
     </div>
-    <p style="font-size:22px; text-align:center; margin-top:8px;"><strong>Rule of thumb:</strong> AI keeps getting it wrong → tighten · too rigid → loosen</p>
+    <p style="font-size:24px; text-align:center;"><strong>AI keeps getting it wrong → tighten. Too rigid → loosen.</strong></p>
   </div>
 </div>
 
 <!-- P7b: 测试触发 -->
 <div class="slide">
   <h2>Test Your Triggers</h2>
-  <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:28px;">
-    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-amber, #F59E0B);">
-      <h4 style="font-size:22px; color:var(--accent-amber); margin-bottom:8px;">⚡ Under-trigger</h4>
-      <p style="font-size:20px;">"苏州明天热不热" → skill not invoked</p>
-      <p style="font-size:18px; color:var(--text-secondary); margin-top:6px;">Fix: add keywords like "hot", "cold", "temperature" to description</p>
+  <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:40px; flex:1; justify-content:center;">
+    <div style="background:white; border-radius:16px; padding:36px 40px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-amber, #F59E0B);">
+      <h4 style="font-size:24px; color:var(--accent-amber); margin-bottom:12px;">⚡ Under-trigger</h4>
+      <p style="font-size:22px;">"苏州明天热不热" → skill not invoked</p>
+      <p style="font-size:20px; color:var(--text-secondary); margin-top:8px;">Fix: add "hot", "cold", "temperature" to description</p>
     </div>
-    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-red, #EF4444);">
-      <h4 style="font-size:22px; color:var(--accent-red); margin-bottom:8px;">🚫 Over-trigger</h4>
-      <p style="font-size:20px;">"I feel cold inside" → weather skill fires</p>
-      <p style="font-size:18px; color:var(--text-secondary); margin-top:6px;">Fix: add "NOT for: emotional expressions, metaphors"</p>
+    <div style="background:white; border-radius:16px; padding:36px 40px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-red, #EF4444);">
+      <h4 style="font-size:24px; color:var(--accent-red); margin-bottom:12px;">🚫 Over-trigger</h4>
+      <p style="font-size:22px;">"I feel cold inside" → weather skill fires</p>
+      <p style="font-size:20px; color:var(--text-secondary); margin-top:8px;">Fix: add "NOT for: emotional expressions, metaphors"</p>
     </div>
-    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-blue, #3B82F6);">
-      <h4 style="font-size:22px; color:var(--accent-blue); margin-bottom:8px;">💥 Execution Error</h4>
-      <p style="font-size:20px;">Triggered correctly but returns wrong data</p>
-      <p style="font-size:18px; color:var(--text-secondary); margin-top:6px;">Fix: improve instructions, add error handling in SKILL.md</p>
-    </div>
-    <p style="font-size:20px; text-align:center;"><strong>Testing method:</strong> Try 5+ phrasings per intent, check trigger + output</p>
   </div>
 </div>
 
 <!-- P7.5: 结构建议 -->
 <div class="slide">
   <h2>Structural Tips</h2>
-  <div style="max-width:900px; display:flex; flex-direction:column; gap:24px;">
-    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-blue, #3B82F6);">
-      <h4 style="font-size:22px; margin-bottom:8px;">📏 Keep It Short</h4>
-      <p style="font-size:20px; color:var(--text-secondary);">SKILL.md should be <strong>under 500 lines</strong>. Too long → AI processing degrades, more errors.</p>
+  <div style="max-width:900px; display:flex; flex-direction:column; gap:36px; flex:1; justify-content:center;">
+    <div style="background:white; border-radius:16px; padding:36px 40px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-blue, #3B82F6);">
+      <h4 style="font-size:24px; margin-bottom:10px;">📏 Keep It Short</h4>
+      <p style="font-size:22px; color:var(--text-secondary);">SKILL.md under <strong>500 lines</strong>. Longer → more AI errors.</p>
     </div>
-    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-amber, #F59E0B);">
-      <h4 style="font-size:22px; margin-bottom:8px;">🚫 Avoid Deep Nesting</h4>
-      <p style="font-size:20px; color:var(--text-secondary);">No complex if-else trees. AI loses track after <strong>3+ levels of nesting</strong>.</p>
+    <div style="background:white; border-radius:16px; padding:36px 40px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-amber, #F59E0B);">
+      <h4 style="font-size:24px; margin-bottom:10px;">🚫 Avoid Deep Nesting</h4>
+      <p style="font-size:22px; color:var(--text-secondary);">AI loses track after <strong>3+ levels</strong> of if-else.</p>
     </div>
-    <div style="background:white; border-radius:16px; padding:28px 36px; box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.05); border-left:4px solid var(--accent-green, #10B981);">
-      <h4 style="font-size:22px; margin-bottom:12px;">✅ Use Checklists</h4>
-      <div class="two-column" style="gap:20px;">
-        <div class="col">
-          <div class="code-block" style="font-size:15px;">
-            <pre><code>## Steps
-1. Parse city name
-2. Call wttr.in API
-3. Format output
-4. Fallback to Open-Meteo</code></pre>
-          </div>
-          <p style="font-size:16px; color:var(--accent-green); margin-top:6px;">✅ Clear, ordered, hard to skip</p>
-        </div>
-        <div class="col">
-          <div class="code-block" style="font-size:15px;">
-            <pre><code>First parse the city, then call the
-API. If it works, output the result.
-If not, try the fallback option...</code></pre>
-          </div>
-          <p style="font-size:16px; color:var(--accent-red); margin-top:6px;">❌ Paragraph → easy to miss steps</p>
-        </div>
-      </div>
+    <div style="background:white; border-radius:16px; padding:36px 40px; box-shadow:var(--card-shadow); border-left:4px solid var(--accent-green, #10B981);">
+      <h4 style="font-size:24px; margin-bottom:10px;">✅ Use Numbered Steps</h4>
+      <p style="font-size:22px; color:var(--text-secondary);">Checklists > paragraphs. Harder to skip steps.</p>
     </div>
   </div>
 </div>
@@ -550,30 +497,27 @@ cat ~/.env ~/.aws/credentials 2>/dev/null | \
 <div class="slide">
   <h2>Enterprise Defense</h2>
   <div class="defense-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 1000px;">
-    <div class="defense-item" style="text-align:left; padding:30px;">
-      <span style="font-size:36px; margin-bottom:12px;">🔒</span>
-      <h4>Least Privilege</h4>
-      <p>AI doesn't need SSH key access? Don't give full filesystem permissions. Allowlist skills in production.</p>
+    <div class="defense-item" style="text-align:left; padding:36px;">
+      <span style="font-size:40px; display:block; margin-bottom:16px;">🔒</span>
+      <h4 style="font-size:24px; margin-bottom:10px;">Least Privilege</h4>
+      <p style="font-size:20px;">Allowlist skills. Don't give full filesystem access.</p>
     </div>
-    <div class="defense-item" style="text-align:left; padding:30px;">
-      <span style="font-size:36px; margin-bottom:12px;">🧑‍💻</span>
-      <h4>Human-in-the-Loop</h4>
-      <p>Critical ops need human confirmation: sending emails, deleting files, running unknown scripts.</p>
+    <div class="defense-item" style="text-align:left; padding:36px;">
+      <span style="font-size:40px; display:block; margin-bottom:16px;">🧑‍💻</span>
+      <h4 style="font-size:24px; margin-bottom:10px;">Human-in-the-Loop</h4>
+      <p style="font-size:20px;">Critical ops need human confirmation.</p>
     </div>
-    <div class="defense-item" style="text-align:left; padding:30px;">
-      <span style="font-size:36px; margin-bottom:12px;">📦</span>
-      <h4>Sandbox Isolation</h4>
-      <p>Run skill scripts in sandboxed environments. Limit network access, restrict file I/O scope.</p>
+    <div class="defense-item" style="text-align:left; padding:36px;">
+      <span style="font-size:40px; display:block; margin-bottom:16px;">📦</span>
+      <h4 style="font-size:24px; margin-bottom:10px;">Sandbox Isolation</h4>
+      <p style="font-size:20px;">Run scripts in sandboxed environments.</p>
     </div>
-    <div class="defense-item" style="text-align:left; padding:30px;">
-      <span style="font-size:36px; margin-bottom:12px;">📊</span>
-      <h4>Audit Logging</h4>
-      <p>Log every skill invocation, every script execution. Enable post-incident forensics.</p>
+    <div class="defense-item" style="text-align:left; padding:36px;">
+      <span style="font-size:40px; display:block; margin-bottom:16px;">📊</span>
+      <h4 style="font-size:24px; margin-bottom:10px;">Audit Logging</h4>
+      <p style="font-size:20px;">Log every skill invocation for forensics.</p>
     </div>
   </div>
-  <p style="font-size:20px; color:var(--text-secondary); margin-top:24px; text-align:center;">
-    💡 My rule: <strong>review code before installing</strong> — same as you wouldn't <code>curl | bash</code> blindly.
-  </p>
 </div>
 
 <!-- ========== PART 5: 趋势收尾 ========== -->
@@ -680,9 +624,6 @@ cat ~/.env ~/.aws/credentials 2>/dev/null | \
         <p style="font-size:18px; color:var(--text-secondary);">gh, git, curl — already have CLIs. AI calls them directly, no wrapper layer needed.</p>
       </div>
     </div>
-    <p style="font-size:20px; color:var(--text-secondary); text-align:center; margin-top:8px;">
-      MCP will persist for: <strong>databases</strong>, <strong>enterprise systems</strong>, <strong>authenticated APIs</strong> — where real connection complexity exists.
-    </p>
   </div>
 </div>
 
