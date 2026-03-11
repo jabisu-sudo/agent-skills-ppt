@@ -28,6 +28,7 @@ body {
   font-family: var(--font-main);
   background: var(--bg-primary);
   color: var(--text-primary);
+  overflow: hidden;
 }
 
 /* Slide Base */
@@ -362,11 +363,11 @@ body {
 }
 
 .slide.p8-security .stat-card {
-  padding: 28px 24px;
+  padding: 44px 24px;
 }
 
 .slide.p8-security .stat-card .number {
-  font-size: 54px;
+  font-size: 64px;
   line-height: 1.05;
 }
 
@@ -644,6 +645,21 @@ body {
   font-size: 24px;
   line-height: 1.5;
 }
+
+/* === P10 npm analogy: click-to-reveal rows === */
+.slide-p10 .p10-row {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.slide-p10 .p10-takeaway {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+.slide-p10.p10-r1 .p10-row-1 { opacity: 1; transform: translateY(0); }
+.slide-p10.p10-r2 .p10-row-2 { opacity: 1; transform: translateY(0); }
+.slide-p10.p10-r3 .p10-row-3 { opacity: 1; transform: translateY(0); }
+.slide-p10.p10-r3 .p10-takeaway { opacity: 1; }
 
 /* === P5 SKILL.md click-to-reveal highlights === */
 .slide-skillmd .hl-section {
