@@ -660,13 +660,11 @@ body {
 .skill-md-doc {
   position: relative;
   padding: 24px 28px;
-  width: 100%;
-  max-width: 900px;
 }
 
 .skill-md-doc code {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.45;
 }
 
 .hl-box {
@@ -675,7 +673,7 @@ body {
   border-radius: 10px;
   pointer-events: none;
   opacity: 0;
-  animation: fadeInStay 0.6s ease forwards;
+  animation: pulseHighlight 12s infinite;
   background: rgba(255,255,255,0.35);
 }
 .hl-box span {
@@ -688,20 +686,21 @@ body {
   border-radius: 999px;
   color: white;
 }
-.hl-frontmatter { top: 18px; left: 18px; right: 18px; height: 136px; border-color: var(--accent-blue); animation-delay: 0.5s; }
+.hl-frontmatter { top: 18px; left: 18px; right: 18px; height: 136px; border-color: var(--accent-blue); animation-delay: 0s; }
 .hl-frontmatter span { background: var(--accent-blue); }
-.hl-description { top: 64px; left: 18px; right: 18px; height: 86px; border-color: #6366F1; animation-delay: 1.5s; }
+.hl-description { top: 64px; left: 18px; right: 18px; height: 86px; border-color: #6366F1; animation-delay: 2s; }
 .hl-description span { background: #6366F1; }
-.hl-steps { top: 176px; left: 18px; right: 18px; height: 122px; border-color: var(--accent-green); animation-delay: 2.5s; }
+.hl-steps { top: 176px; left: 18px; right: 18px; height: 122px; border-color: var(--accent-green); animation-delay: 4s; }
 .hl-steps span { background: var(--accent-green); }
-.hl-references { top: 302px; left: 18px; right: 18px; height: 74px; border-color: var(--accent-amber); animation-delay: 3.5s; }
+.hl-references { top: 302px; left: 18px; right: 18px; height: 74px; border-color: var(--accent-amber); animation-delay: 6s; }
 .hl-references span { background: var(--accent-amber); }
-.hl-scripts { top: 380px; left: 18px; right: 18px; height: 74px; border-color: #EC4899; animation-delay: 4.5s; }
+.hl-scripts { top: 380px; left: 18px; right: 18px; height: 74px; border-color: #EC4899; animation-delay: 8s; }
 .hl-scripts span { background: #EC4899; }
-.hl-output { top: 458px; left: 18px; right: 18px; height: 78px; border-color: var(--accent-red); animation-delay: 5.5s; }
+.hl-output { top: 458px; left: 18px; right: 18px; height: 78px; border-color: var(--accent-red); animation-delay: 10s; }
 .hl-output span { background: var(--accent-red); }
 
-@keyframes fadeInStay {
-  0% { opacity: 0; transform: scale(0.98); }
-  100% { opacity: 1; transform: scale(1); }
+@keyframes pulseHighlight {
+  0%, 8% { opacity: 0; transform: scale(0.995); }
+  10%, 20% { opacity: 1; transform: scale(1); }
+  24%, 100% { opacity: 0; transform: scale(1.005); }
 }
