@@ -233,58 +233,69 @@
   </div>
 </div>
 
-<!-- P5: How Progressive Disclosure Works — merged slide -->
+<!-- P5: Progressive Disclosure — click-to-reveal 3 layers -->
 <div class="slide slide-skillmd slide-p5">
-  <h2>How Progressive Disclosure Works</h2>
-  <div style="display:flex; gap:40px; align-items:flex-start; max-width:1200px; width:100%; margin-top:10px;">
+  <h2>Progressive Disclosure</h2>
+  <div style="display:flex; gap:36px; align-items:flex-start; max-width:1160px; width:100%; margin-top:20px;">
     <!-- Left: full SKILL.md -->
-    <div class="code-block" style="font-size:15px; flex:1; padding:28px 32px; position:relative; line-height:1.55;">
+    <div class="code-block" style="font-size:15px; flex:1; padding:28px 32px; position:relative; line-height:1.5;">
       <pre style="margin:0;"><code><span class="hl-section hl-frontmatter">---
 name: weather
 description: >
-  Get weather and forecasts via wttr.in.
-  Use when: user asks about weather,
-  temperature, or forecasts.
+  Get weather forecasts via wttr.in.
+  Use when: weather, temperature, forecasts.
   NOT for: historical data, alerts.
 ---</span>
 
 <span class="hl-section hl-steps">## Steps
 1. Parse city name from user input
-2. Call: curl wttr.in/{city}?format=j1
+2. Fetch weather data via wttr.in
 3. Format: temp, humidity, wind
-4. Fallback: Open-Meteo if wttr.in fails
 
 ## Output Format
-🌡️ {temp}°C, {condition}
-Tomorrow: {high}/{low}°C</span>
+{temp}°C, {condition} | Tomorrow: {high}/{low}°C</span>
 
 <span class="hl-section hl-refs">## References
-See <strong>references/api-docs.md</strong> for API params
-See <strong>references/error-codes.md</strong> for status codes</span>
+See <strong>references/api-docs.md</strong> for API params</span>
 
 <span class="hl-section hl-scripts">## Scripts
-Run <strong>scripts/fetch.py</strong> {city}
-Run <strong>scripts/format.py</strong> --json</span></code></pre>
+Run <strong>scripts/fetch.py</strong> {city}</span></code></pre>
     </div>
-    <!-- Right: three annotation cards for the three loading levels -->
-    <div style="flex:0 0 360px; display:flex; flex-direction:column; gap:18px; padding-top:4px;">
-      <div class="hl-annotation hl-ann-1" style="border-left:4px solid var(--accent-blue, #3B82F6); padding:14px 18px; background:#EFF6FF; border-radius:0 12px 12px 0;">
-        <h4 style="font-size:17px; color:var(--accent-blue); margin-bottom:6px;">Layer 1: Route</h4>
-        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Injected into system prompt:</p>
-        <div style="background:white; border:1px solid #DBEAFE; border-radius:6px; padding:8px 10px; margin-top:8px; font-family:monospace; font-size:11px; line-height:1.6; color:#64748B;">
-          <span style="color:var(--accent-blue);">weather</span> → forecasts via wttr.in<br>
-          <span style="color:var(--accent-blue);">github</span> &nbsp;→ PRs, issues, CI<br>
-          <span style="color:var(--accent-blue);">imsg</span> &nbsp;&nbsp;&nbsp;→ send iMessage<br>
-          <span style="color:#94A3B8;">+47 more...</span>
+    <!-- Right: three annotation cards -->
+    <div style="flex:0 0 400px; display:flex; flex-direction:column; gap:16px; padding-top:4px;">
+      <div class="hl-annotation hl-ann-1" style="border-left:4px solid var(--accent-blue); padding:16px 20px; background:#EFF6FF; border-radius:0 12px 12px 0;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <h4 style="font-size:20px; color:var(--accent-blue);">Level 1: Metadata</h4>
+          <span style="font-family:var(--font-mono); font-size:13px; color:var(--accent-blue); background:white; padding:3px 10px; border-radius:4px; border:1px solid #DBEAFE;">~100 tok/skill</span>
+        </div>
+        <p style="font-size:15px; color:var(--text-secondary); line-height:1.5;">YAML frontmatter — always in system prompt</p>
+        <!-- Mini system prompt diagram -->
+        <div style="background:white; border:1.5px solid #CBD5E1; border-radius:8px; margin-top:10px; overflow:hidden;">
+          <div style="background:#F1F5F9; padding:5px 10px; font-size:11px; font-weight:600; color:#64748B; border-bottom:1px solid #E2E8F0;">System Prompt</div>
+          <div style="padding:8px 10px;">
+            <div style="background:#F1F5F9; border-radius:4px; height:6px; width:65%; margin-bottom:8px;"></div>
+            <div style="font-family:var(--font-mono); font-size:11px; line-height:1.7; color:#64748B;">
+              <span style="color:var(--accent-blue); font-weight:600;">weather</span> → forecasts via wttr.in<br>
+              <span style="color:var(--accent-blue); font-weight:600;">github</span> &nbsp;→ PRs, issues, CI<br>
+              <span style="color:var(--accent-blue); font-weight:600;">pdf</span> &nbsp;&nbsp;&nbsp;&nbsp;→ extract, fill forms<br>
+              <span style="color:#94A3B8;">+47 more...</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hl-annotation hl-ann-2" style="border-left:4px solid var(--accent-amber, #F59E0B); padding:14px 18px; background:#FFFBEB; border-radius:0 12px 12px 0;">
-        <h4 style="font-size:17px; color:var(--accent-amber); margin-bottom:6px;">Layer 2: Load</h4>
-        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">SKILL.md body loaded when matched. Full instructions for the task.</p>
+      <div class="hl-annotation hl-ann-2" style="border-left:4px solid var(--accent-amber); padding:16px 20px; background:#FFFBEB; border-radius:0 12px 12px 0;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <h4 style="font-size:20px; color:var(--accent-amber);">Level 2: Instructions</h4>
+          <span style="font-family:var(--font-mono); font-size:13px; color:var(--accent-amber); background:white; padding:3px 10px; border-radius:4px; border:1px solid #FDE68A;">&lt;5k tok</span>
+        </div>
+        <p style="font-size:16px; color:var(--text-secondary); line-height:1.5;">SKILL.md body — loaded when skill triggered</p>
       </div>
-      <div class="hl-annotation hl-ann-3" style="border-left:4px solid var(--accent-green, #10B981); padding:14px 18px; background:#ECFDF5; border-radius:0 12px 12px 0;">
-        <h4 style="font-size:17px; color:var(--accent-green); margin-bottom:6px;">Layer 3: On Demand</h4>
-        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">references/ and scripts/ read only when needed. Keeps context minimal.</p>
+      <div class="hl-annotation hl-ann-3" style="border-left:4px solid var(--accent-green); padding:16px 20px; background:#ECFDF5; border-radius:0 12px 12px 0;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <h4 style="font-size:20px; color:var(--accent-green);">Level 3: Resources</h4>
+          <span style="font-family:var(--font-mono); font-size:13px; color:var(--accent-green); background:white; padding:3px 10px; border-radius:4px; border:1px solid #A7F3D0;">unlimited</span>
+        </div>
+        <p style="font-size:16px; color:var(--text-secondary); line-height:1.5;">references/ and scripts/ — read or run only when needed</p>
       </div>
     </div>
   </div>

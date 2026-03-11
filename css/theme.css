@@ -667,5 +667,5 @@ body {
 
 /* Layer 3 revealed */
 .slide-p5.reveal-3 .hl-refs { background: rgba(16,185,129,0.1); }
-.slide-p5.reveal-3 .hl-scripts { background: rgba(139,92,246,0.1); }
+.slide-p5.reveal-3 .hl-scripts { background: rgba(16,185,129,0.1); }
 .slide-p5.reveal-3 .hl-ann-3 { opacity: 1; transform: translateX(0); }
