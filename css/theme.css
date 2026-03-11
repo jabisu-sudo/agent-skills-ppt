@@ -220,10 +220,7 @@ body {
   max-width: 1400px;
 }
 
-/* Vertically centered slide */
-.slide-vcenter {
-  justify-content: center;
-}
+/* Vertically centered slide - DEPRECATED: all slides now use flex-start for consistent title position */
 
 .slide-image svg {
   width: 100%;
