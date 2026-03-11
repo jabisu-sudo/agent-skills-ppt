@@ -13,7 +13,7 @@
 <!-- P1: Cover -->
 <div class="slide slide-cover active">
   <h1>Agent Skills</h1>
-  <p class="subtitle">Hongwei Ma · March 2026</p>
+  <p class="subtitle">Hongwei Ma<br>March 2026</p>
 </div>
 
 <!-- P2: Timeline -->
@@ -67,27 +67,27 @@
 
 <!-- ========== PART 2: 核心价值 → 结构 ========== -->
 
-<!-- P3: Two Core Values（极简过渡） -->
+<!-- P3: Core Values -->
 <div class="slide">
-  <h2>Two Core Values</h2>
-  <div class="two-column" style="max-width:1000px; gap:60px; margin-top:60px; flex:1; align-items:stretch;">
-    <div class="col" style="background:white; border-radius:16px; padding:60px 48px; box-shadow:var(--card-shadow); border-top:4px solid var(--accent-blue, #3B82F6); text-align:center; display:flex; flex-direction:column; justify-content:center;">
-      <div style="font-size:64px; margin-bottom:24px;">♻️</div>
-      <h3 style="font-size:36px; margin-bottom:20px;">Reusable</h3>
-      <p style="font-size:24px; color:var(--text-secondary); line-height:1.6;">Works across sessions and platforms.<br>Package once, share with anyone.</p>
+  <h2>Core Values</h2>
+  <div class="two-column" style="max-width:960px; gap:48px; margin-top:20px; flex:1; align-items:stretch;">
+    <div class="col" style="background:white; border-radius:16px; padding:40px 36px; box-shadow:var(--card-shadow); border-top:4px solid var(--accent-blue, #3B82F6); text-align:center; display:flex; flex-direction:column; justify-content:center;">
+      <div style="font-size:48px; margin-bottom:16px;">♻️</div>
+      <h3 style="font-size:32px; margin-bottom:14px;">Reusable</h3>
+      <p style="font-size:22px; color:var(--text-secondary); line-height:1.5;">Write once, use everywhere.<br>Share across tools and teams.</p>
     </div>
-    <div class="col" style="background:white; border-radius:16px; padding:60px 48px; box-shadow:var(--card-shadow); border-top:4px solid var(--accent-green, #10B981); text-align:center; display:flex; flex-direction:column; justify-content:center;">
-      <div style="font-size:64px; margin-bottom:24px;">🧠</div>
-      <h3 style="font-size:36px; margin-bottom:20px;">Context-Efficient</h3>
-      <p style="font-size:24px; color:var(--text-secondary); line-height:1.6;">Loaded on demand, not all at once.<br>50 skills installed, 1–2 active.</p>
+    <div class="col" style="background:white; border-radius:16px; padding:40px 36px; box-shadow:var(--card-shadow); border-top:4px solid var(--accent-green, #10B981); text-align:center; display:flex; flex-direction:column; justify-content:center;">
+      <div style="font-size:48px; margin-bottom:16px;">📐</div>
+      <h3 style="font-size:32px; margin-bottom:14px;">Progressive Disclosure</h3>
+      <p style="font-size:22px; color:var(--text-secondary); line-height:1.5;">Load on demand, not upfront.<br>50 skills installed, 1–2 in context.</p>
     </div>
   </div>
 </div>
 
 <!-- P3.5: Anatomy of a Skill（文件树） -->
 <div class="slide">
-  <h2>Anatomy of a Skill</h2>
-  <div style="display:flex; justify-content:center; align-items:center; flex:1; width:100%;">
+  <h2>Skill Structure</h2>
+  <div style="display:flex; justify-content:center; align-items:flex-start; flex:1; width:100%; padding-top:20px;">
     <svg viewBox="0 0 1000 440" style="width:90%; max-width:1100px;">
       <style>
         .tree-text { font-family: var(--font-mono, monospace); font-size: 22px; fill: var(--text-primary, #0F172A); }
@@ -139,7 +139,7 @@
   <h2>Inside SKILL.md</h2>
   <div class="two-column" style="gap:40px; align-items:start;">
     <div class="col">
-      <h3 style="font-size:22px; margin-bottom:12px; color:var(--accent-blue);">📋 Frontmatter (Always Loaded)</h3>
+      <h3 style="font-size:22px; margin-bottom:12px; color:var(--accent-blue);">📋 Frontmatter</h3>
       <div class="code-block" style="font-size:16px;">
         <pre><code>---
 name: weather
@@ -152,11 +152,11 @@ description: >
       </div>
       <p style="color:var(--text-secondary); font-size:17px; margin-top:12px;">
         Always in system prompt → <strong>routing signal</strong><br>
-        AI reads this to decide: "should I load this skill?"
+        Name + description only — a few tokens per skill.
       </p>
     </div>
     <div class="col">
-      <h3 style="font-size:22px; margin-bottom:12px; color:var(--accent-amber);">📄 Body (Loaded on Match)</h3>
+      <h3 style="font-size:22px; margin-bottom:12px; color:var(--accent-amber);">📄 Body (On-Demand)</h3>
       <div class="code-block" style="font-size:16px;">
         <pre><code>## Steps
 1. Parse city name from user input
@@ -169,11 +169,14 @@ description: >
 Tomorrow: {high}/{low}°C
 
 ## References
-See references/api-docs.md for params</code></pre>
+See references/api-docs.md for params
+
+## Scripts
+Run scripts/fetch.py {city}</code></pre>
       </div>
       <p style="color:var(--text-secondary); font-size:17px; margin-top:12px;">
-        Only loaded when matched → <strong>full instructions</strong><br>
-        Dropped from context after task completes.
+        Loaded only when matched → <strong>full instructions</strong><br>
+        Steps, references, scripts — everything AI needs to execute.
       </p>
     </div>
   </div>
