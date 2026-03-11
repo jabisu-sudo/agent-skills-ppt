@@ -423,9 +423,10 @@ body {
   line-height: 1.5;
 }
 
-/* Code Block */
+/* Code Block - Light theme */
 .code-block {
-  background: #1E293B;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
   border-radius: 12px;
   padding: 36px;
   max-width: 1100px;
@@ -440,7 +441,7 @@ body {
 .code-block code {
   font-family: var(--font-mono);
   font-size: 17px;
-  color: #E2E8F0;
+  color: #334155;
   line-height: 1.6;
 }
 
