@@ -334,6 +334,38 @@ body {
 .slide-dark {
   justify-content: center;
 }
+
+/* P8: Security Reality fit 1080p without overflow */
+.slide.p8-security h2 {
+  font-size: 52px;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.slide.p8-security .stats-grid {
+  max-width: 940px;
+  gap: 20px;
+}
+
+.slide.p8-security .stat-card {
+  padding: 28px 24px;
+}
+
+.slide.p8-security .stat-card .number {
+  font-size: 54px;
+  line-height: 1.05;
+}
+
+.slide.p8-security .stat-card .desc {
+  font-size: 18px;
+  margin-top: 6px;
+}
+
+.slide.p8-security .stat-card .source {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
 .controls {
   position: fixed;
   bottom: 30px;
