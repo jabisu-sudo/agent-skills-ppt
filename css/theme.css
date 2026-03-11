@@ -40,17 +40,17 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 60px 80px 40px;
+  padding: 90px 80px 40px;
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  animation: slideFadeIn 0.5s ease-out;
+  opacity: 0;
 }
 
-.slide.active { display: flex; }
+.slide.active { display: flex; opacity: 1; }
+.slide.fade-out { display: flex; opacity: 0; }
 
 /* === Page Transition === */
-@keyframes slideFadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.slide {
+  transition: opacity 0.35s ease-in-out;
 }
 
 /* === P3: click to reveal summary + analogies === */
@@ -64,6 +64,17 @@ body {
 .slide-p3.revealed hr,
 .slide-p3.revealed hr ~ div {
   opacity: 1;
+}
+
+/* === P12: click to reveal cards + tagline === */
+.slide-p12 .p12-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.slide-p12.revealed .p12-reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* === P2 Timeline: nodes appear left to right === */
@@ -223,7 +234,7 @@ body {
 
 /* Image Slide */
 .slide-image {
-  padding: 40px;
+  padding: 90px 80px 40px;
 }
 
 .slide-image .image-container {
@@ -350,16 +361,16 @@ body {
 .slide-dark {
 }
 
-/* P8: Security Reality fit 1080p without overflow */
+/* P8: Security Reality */
 .slide.p8-security h2 {
-  font-size: 52px;
-  margin-top: 0;
-  margin-bottom: 24px;
+  font-size: var(--title-size);
+  margin-bottom: 40px;
 }
 
 .slide.p8-security .stats-grid {
   max-width: 940px;
-  gap: 20px;
+  gap: 32px;
+  margin-top: 20px;
 }
 
 .slide.p8-security .stat-card {
